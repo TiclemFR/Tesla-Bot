@@ -1,1 +1,14 @@
-
+{
+  "name": "Tesla Bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "script":{
+     
+  },
+  "author": "TiclemFR",
+  "licence": "ISC",
+  "dependencies": {
+    "discord.js": ^11.2.1"
+  }
+}
