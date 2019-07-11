@@ -42,14 +42,6 @@ module.exports.run = async(client, message, args) => {
                     value: 'Supprime le nombre de message indiqué, SAUF ce de plus de 14 jours'
                 },
                 {
-                    name: '🔞 __**NSFW**__',
-                    value: "Catégorie NSFW"
-                },
-                {
-                    name: '**>** neko | nekolewd',
-                    value: 'Donne des images aléatoire NSFW, ⚠🔞'
-                },
-                {
                     name: '🎵 __**Musique**__ ⚠ **[Bêta]**',
                     value: 'Pour la musique ⚠ peut être **instable**'
                 },
