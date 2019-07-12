@@ -1,7 +1,7 @@
-const Command = require('../modules/Command2');
+const Command = require('../modules/Command2.js');
 const { MessageEmbed } = require('discord.js');
 const request = require('node-superfetch');
-const { formatNumber } = require('../modules/Util');
+const { formatNumber } = require('../modules/Util.js');
 const { OSU_KEY } = process.env;
 
 module.exports = class OsuCommand extends Command {
