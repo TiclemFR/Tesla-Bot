@@ -5,6 +5,13 @@ const { formatNumber } = require('../modules/Util');
 const { OSU_KEY } = process.env.OSU_KEY;
 
 module.exports.run = async(client, message, args) => {
+	args: [
+				{
+					key: 'user',
+					prompt: 'What user would you like to get information on?',
+					type: 'string'
+				}
+			]
 		try {
 			const { body } = await request
 				.get('https://osu.ppy.sh/api/get_user')
