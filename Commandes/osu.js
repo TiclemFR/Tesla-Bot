@@ -1,34 +1,10 @@
-const Command = require('../modules/Command2.js');
+const Command = require('../modules/Command2');
 const { MessageEmbed } = require('discord.js');
 const request = require('node-superfetch');
-const { formatNumber } = require('../modules/Util.js');
+const { formatNumber } = require('../modules/Util');
 const { OSU_KEY } = process.env;
 
-module.exports = class OsuCommand extends Command {
-	constructor(client) {
-		super(client, {
-			name: 'osu',
-			group: 'search',
-			memberName: 'osu',
-			description: 'Responds with information on an osu! user.',
-			clientPermissions: ['EMBED_LINKS'],
-			credit: [
-				{
-					name: 'osu!api',
-					url: 'https://github.com/ppy/osu-api/wiki'
-				}
-			],
-			args: [
-				{
-					key: 'user',
-					prompt: 'What user would you like to get information on?',
-					type: 'string'
-				}
-			]
-		});
-	}
-
-	async run(msg, { user }) {
+module.exports.run = async(client, message, args) => {
 		try {
 			const { body } = await request
 				.get('https://osu.ppy.sh/api/get_user')
@@ -58,8 +34,7 @@ module.exports = class OsuCommand extends Command {
 		} catch (err) {
 			return msg.reply(`Oh no, an error occurred: \`${err.message}\`. Try again later!`);
 		}
-	}
-};
+	};
 
 module.exports.help = {
 	name: "osu"
