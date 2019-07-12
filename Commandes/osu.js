@@ -2,7 +2,7 @@ const Command = require('../modules/Command2');
 const { MessageEmbed } = require('discord.js');
 const request = require('node-superfetch');
 const { formatNumber } = require('../modules/Util');
-const { OSU_KEY } = process.env;
+const { OSU_KEY } = process.env.OSU_KEY;
 
 module.exports.run = async(client, message, args) => {
 		try {
