@@ -60,3 +60,7 @@ module.exports = class OsuCommand extends Command {
 		}
 	}
 };
+
+module.exports.help = {
+	name: "osu"
+}
