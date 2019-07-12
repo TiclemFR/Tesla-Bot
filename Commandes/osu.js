@@ -10,7 +10,7 @@ module.exports.run = async(client, message, args) => {
 				.get('https://osu.ppy.sh/api/get_user')
 				.query({
 					k: OSU_KEY,
-					u: 'Ticlem',
+					u: client,
 					type: 'string'
 				});
 			if (!body.length) return message.channel.send('Could not find any results.');
