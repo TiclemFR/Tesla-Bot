@@ -32,7 +32,7 @@ module.exports.run = async(client, message, args) => {
 				.addField('❯ A', data.count_rank_a ? formatNumber(data.count_rank_a) : '???', true);
 			return msg.embed(embed);
 		} catch (err) {
-			return msg.reply(`Oh no, an error occurred: \`${err.message}\`. Try again later!`);
+			message.channel.send(`Oh no, an error occurred: \`${err.message}\`. Try again later!`);
 		}
 	};
 
