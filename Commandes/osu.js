@@ -4,7 +4,7 @@ const request = require('node-superfetch');
 const { formatNumber } = require('../modules/Util');
 const { OSU_KEY } = process.env;
 
-module.exports.run = async(client, message, args) => {
+module.exports.run = async(message, args) => {
 		try {
 			const { body } = await request
 				.get('https://osu.ppy.sh/api/get_user')
@@ -14,7 +14,6 @@ module.exports.run = async(client, message, args) => {
 					type: 'string'
 				});
 			if (!body.length) return message.channel.send('Could not find any results.');
-			if(!message.guild.member(client.user).hasPermission('SEND_MESSAGES')) return message.channel.send('❌ ERREUR Je n\'ai pas la permission d\'éxécuter cette commande !').catch(console.error);
 			const data = body[0];
 			const embed = new MessageEmbed()
 				.setColor(0xFF66AA)
