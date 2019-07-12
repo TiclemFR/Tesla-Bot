@@ -13,7 +13,7 @@ module.exports.run = async(client, message, args) => {
 					u: user,
 					type: 'string'
 				});
-			if (!body.length) return msg.say('Could not find any results.');
+			if (!body.length) return message.channel.send('Could not find any results.');
 			const data = body[0];
 			const embed = new MessageEmbed()
 				.setColor(0xFF66AA)
@@ -30,7 +30,7 @@ module.exports.run = async(client, message, args) => {
 				.addField('❯ SS', data.count_rank_ss ? formatNumber(data.count_rank_ss) : '???', true)
 				.addField('❯ S', data.count_rank_s ? formatNumber(data.count_rank_s) : '???', true)
 				.addField('❯ A', data.count_rank_a ? formatNumber(data.count_rank_a) : '???', true);
-			return msg.embed(embed);
+			return message.channel.embed.send(embed);
 		} catch (err) {
 			message.channel.send(`Oh no, an error occurred: \`${err.message}\`. Try again later!`);
 		}
