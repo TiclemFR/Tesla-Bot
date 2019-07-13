@@ -29,7 +29,8 @@ module.exports.run = async(author,message, args) => {
 				.addField('❯ Total Score', data.total_score ? formatNumber(data.total_score) : '???', true)
 				.addField('❯ SS', data.count_rank_ss ? formatNumber(data.count_rank_ss) : '???', true)
 				.addField('❯ S', data.count_rank_s ? formatNumber(data.count_rank_s) : '???', true)
-				.addField('❯ A', data.count_rank_a ? formatNumber(data.count_rank_a) : '???', true);
+				.addField('❯ A', data.count_rank_a ? formatNumber(data.count_rank_a) : '???', true)
+				.addField(client.user);
 			return message.channel.embed.send(embed);
 		} catch (err) {
 			message.channel.send(`Oh no, an error occurred: \`${err.message}\`. Try again later!`);
