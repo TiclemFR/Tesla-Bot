@@ -7,8 +7,8 @@ const { OSU_KEY } = process.env;
 module.exports.run = async(client,message, args) => {
 		try {
 			const { body } = await request
-				.get('https://osu.ppy.sh/api/get_user')
-				.query({
+				get('https://osu.ppy.sh/api/get_user')
+				query({
 					k: OSU_KEY,
 					u: args[0],
 					type: 'string'
