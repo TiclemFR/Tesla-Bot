@@ -8,7 +8,7 @@ const errors = require("../modules/errors.js");
 module.exports.run = async (bot, message, args) => {
     message.delete();
     if(args[0] == "help"){
-      message.reply("Usage: !report <user> <reason>");
+      message.reply("Usage: t!report <user> <reason>");
       return;
     }
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
