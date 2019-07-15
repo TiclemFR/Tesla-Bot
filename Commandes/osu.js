@@ -5,7 +5,6 @@ const { formatNumber } = require('../modules/Util');
 const { OSU_KEY } = process.env;
 
 module.exports.run = async(client,message, args) => {
-	constructor(client) {
 		super(client, {
 			name: 'osu',
 			group: 'search',
