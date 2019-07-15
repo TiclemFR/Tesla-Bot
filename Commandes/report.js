@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Time", message.createdAt)
     .addField("Reason", rreason);
 
-    let reportschannel = message.guild.channels.find(`#report-tesla`, "reports");
+    let reportschannel = message.guild.channels.find(`report-tesla`, "reports");
     if(!reportschannel) return message.channel.send("Impossible de trouver le channel de log.");
     reportschannel.send(reportEmbed);
 
