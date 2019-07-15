@@ -3,17 +3,13 @@ const { MessageEmbed } = require('discord.js');
 const request = require('node-superfetch');
 const { formatNumber } = require('../modules/Util');
 const { OSU_KEY } = process.env;
+const client = client.user;
 
 module.exports.run = async(client,message, args) => {
 		try {
 			const { body } = await request
 				.get('https://osu.ppy.sh/api/get_user')
 				.query({
-					client: name: 'osu',
-			group: 'search',
-			memberName: 'osu',
-			description: 'Responds with information on an osu! user.',
-			clientPermissions: ['EMBED_LINKS'],
 					k: OSU_KEY,
 					u: args[0],
 					type: 'string'
