@@ -366,5 +366,9 @@ function getAuthorVoiceChannel(msg) {
  */
 function wrap(text) {
 	return '```\n' + text.replace(/`/g, '`' + String.fromCharCode(8203)) + '\n```';
-}
-}
+};
+};
+
+module.exports.help = {
+	name: 'music'
+};
