@@ -5,9 +5,9 @@ let config = require("../modules/botconfig.json");
 module.exports.noPerms = (message, perm) => {
     let embed = new Discord.RichEmbed()
         .setAuthor(message.author.username)
-        .setTitle("Insufficient Permission")
+        .setTitle("Permission insuffisante")
         .setColor(config.red)
-        .addField("Permission needed", perm);
+        .addField("Permission requise:", perm);
 
     message.channel.send(embed).then(m => m.delete(5000));
 }
@@ -17,8 +17,8 @@ module.exports.equalPerms = (message, user, perms) => {
     let embed = new Discord.RichEmbed()
         .setAuthor(message.author.username)
         .setColor(config.red)
-        .setTitle("Error")
-        .addField(`${user} has perms`, perms);
+        .setTitle("Erreur")
+        .addField(`${user} à les mêmes permissions`, perms);
 
     message.channel.send(embed).then(m => m.delete(5000));
 
@@ -26,8 +26,8 @@ module.exports.equalPerms = (message, user, perms) => {
 
 module.exports.botuser = (message) => {
     let embed = new Discord.RichEmbed()
-        .setTitle("Error")
-        .setDescription("You cannot ban a bot.")
+        .setTitle("Erreur")
+        .setDescription("Vous ne pouvez pas ban un bot.")
         .setColor(config.red);
 
     message.channel.send(embed).then(m => m.delete(5000));
@@ -35,8 +35,8 @@ module.exports.botuser = (message) => {
 
 module.exports.cantfindUser = (channel) => {
     let embed = new Discord.RichEmbed()
-        .setTitle("Error")
-        .setDescription("Could not find that user.")
+        .setTitle("Erreur")
+        .setDescription("Impossible de trouver l'utilisateur.")
         .setColor(config.red);
 
     channel.send(embed).then(m => m.delete(5000));
@@ -44,8 +44,8 @@ module.exports.cantfindUser = (channel) => {
 
 module.exports.noReason = (channel) => {
     let embed = new Discord.RichEmbed()
-        .setTitle("Error")
-        .setDescription("Please supply a reason.")
+        .setTitle("Erreur")
+        .setDescription("Veuillez indiquer une raison.")
         .setColor(config.red);
 
     channel.send(embed).then(m => m.delete(5000));
