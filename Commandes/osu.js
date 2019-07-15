@@ -3,6 +3,11 @@ const { MessageEmbed } = require('discord.js');
 const request = require('node-superfetch');
 const { formatNumber } = require('../modules/Util');
 const { OSU_KEY } = process.env;
+const client = name: 'osu',
+			group: 'search',
+			memberName: 'osu',
+			description: 'Responds with information on an osu! user.',
+			clientPermissions: ['EMBED_LINKS'],
 
 module.exports.run = async(client,message, args) => {
 		try {
