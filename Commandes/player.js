@@ -9,7 +9,7 @@ exports.commands = [
 	"resume",
 	"volume"
 ]
-
+module.exports.run = async(bot, message, args) => {
 let options = false;
 	let PREFIX = (options && options.prefix) || '!';
 	let GLOBAL_QUEUE = (options && options.global) || false;
@@ -366,4 +366,5 @@ function getAuthorVoiceChannel(msg) {
  */
 function wrap(text) {
 	return '```\n' + text.replace(/`/g, '`' + String.fromCharCode(8203)) + '\n```';
+}
 }
