@@ -4,7 +4,7 @@ const request = require('node-superfetch');
 const { formatNumber } = require('../modules/Util');
 const { OSU_KEY } = process.env;
 
-module.exports.run = async(bot,message, args) => {
+module.exports.run = async(client,message, args) => {
 		try {
 			const { body } = await request
 				.get('https://osu.ppy.sh/api/get_user')
