@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+cconst Discord = require('discord.js');
 const moment = require('moment');
 
 module.exports.run = async(client, message, args) => {
@@ -39,7 +39,7 @@ module.exports.run = async(client, message, args) => {
                 },
                 {
                     name: '🔄 __Developpement__',
-                    value: 'Prochaine fonctionnalité de __**Tesla BOT**__: __Report system__'
+                    value: 'Prochaine fonctionnalité de __**Tesla BOT**__: __Recherche....__'
                 },
             ],
             footer: {
