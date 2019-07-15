@@ -5,32 +5,15 @@ const { formatNumber } = require('../modules/Util');
 const { OSU_KEY } = process.env;
 
 module.exports.run = async(client,message, args) => {
-		super(client, {
-			name: 'osu',
-			group: 'search',
-			memberName: 'osu',
-			description: 'Responds with information on an osu! user.',
-			clientPermissions: ['EMBED_LINKS'],
-			credit: [
-				{
-					name: 'osu!api',
-					url: 'https://github.com/ppy/osu-api/wiki'
-				}
-			],
-			args: [
-				{
-					key: 'user',
-					prompt: 'What user would you like to get information on?',
-					type: 'string'
-				}
-			]
-		});
-	}
-
 		try {
 			const { body } = await request
 				.get('https://osu.ppy.sh/api/get_user')
 				.query({
+					client: name: 'osu',
+			group: 'search',
+			memberName: 'osu',
+			description: 'Responds with information on an osu! user.',
+			clientPermissions: ['EMBED_LINKS'],
 					k: OSU_KEY,
 					u: args[0],
 					type: 'string'
