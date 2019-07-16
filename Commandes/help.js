@@ -38,12 +38,16 @@ module.exports.run = async(client, message, args) => {
                     value: 'Donne des informations sur le bot'
                 },
                 {
+                    name: '🛠️ __**Modération**__',
+                    value: 'Commandes de modération'
+                },
+                {
                     name: '**>** clear [nombre de message]',
                     value: 'Supprime le nombre de message indiqué, SAUF ce de plus de 14 jours'
                 },
                 {
                     name: '🔞 __**NSFW**__',
-                    value: "Catégorie NSFW"
+                    value: "Commandes NSFW"
                 },
                 {
                     name: '**>** neko | nekolewd',
