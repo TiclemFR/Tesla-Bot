@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const errors = require("../modules/errors.js");
+const moment = require('moment');
 
 module.exports.run = async (bot, message, args) => {
 
@@ -19,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
     .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
     .addField("Kicked In", message.channel)
-    .addField("Time", message.createdAt)
+    .addField("Time", moment.utc(message.createdAt).format('LLL')
     .addField("Reason", kReason);
 
     let kickChannel = message.guild.channels.find(`id`, "600431065596952587");
