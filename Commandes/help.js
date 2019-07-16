@@ -6,7 +6,7 @@ module.exports.run = async(client, message, args) => {
     const membre = message.mentions.members.first();
     
     const EmbedHelp = new Discord.RichEmbed()
-    .setColor('#ff0101')
+    .setColor('#76df27')
     .setTitle('Liste des commandes disponible')
     .addField('⚙️ __**Général**__', 'Commandes principales')
     .addField('**>** help', 'Affiche les commandes')
