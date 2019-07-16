@@ -30,7 +30,9 @@ module.exports.run = async(client, message, args) => {
     .addField('**>** play [Lien Youtube]', 'Lance la musique du lien youtube **(only)**')
     .addField('**>** stop', 'Arrête la musique')
     .setTimestamp()
-	.setFooter('Plus de commandes à venir');
+    .setFooter('Plus de commandes à venir');
+	
+channel.send(EmbedHelp);
 };
 
 
