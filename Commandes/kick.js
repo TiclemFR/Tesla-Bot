@@ -23,8 +23,8 @@ module.exports.run = async (bot, message, args) => {
     .addField("Time", moment.utc(message.createdAt).format('LLL'))
     .addField("Reason", kReason);
 
-    let kickChannel = message.guild.channels.find(`id`, "600431065596952587");
-    if(!kickChannel) return message.channel.send("Can't find incidents channel.");
+    let kickChannel = message.guild.channels.find(`name`, "report");
+    if(!kickChannel) return message.channel.send("Impossible de trouver le channel de log (report).");
 
     message.guild.member(kUser).kick(kReason);
     kickChannel.send(kickEmbed);
