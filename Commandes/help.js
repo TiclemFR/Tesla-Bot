@@ -14,6 +14,7 @@ module.exports.run = async(client, message, args) => {
     .addField('**>** stats [Mention d\'un utilisateur', 'Affiche les stats d\'un utilisateur')
     .addField('**>** site', 'Donne le lien vers le site de The Tesla')
     .addField('**>** info', 'Donne des informations sur le bot')
+    .addField('**>** serverinfo', 'Donnes des information sur le serveur')
     .addBlankField()
     .addField('🛠️ Modération', 'Commandes modération')
     .addField('**>** kick [user] [reason]', 'Kick un utilisateur')
