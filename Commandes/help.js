@@ -32,7 +32,7 @@ module.exports.run = async(client, message, args) => {
     .setTimestamp()
     .setFooter('Plus de commandes à venir');
 	
-channel.send(EmbedHelp);
+message.channel.send(EmbedHelp);
 };
 
 
