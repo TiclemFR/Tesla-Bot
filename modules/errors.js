@@ -9,7 +9,7 @@ module.exports.noPerms = (message, perm) => {
         .setColor(config.red)
         .addField("Permission requise:", perm);
 
-    message.channel.send(embed).then(m => m.delete(5000));
+    message.channel.send(embed);
 }
 
 module.exports.equalPerms = (message, user, perms) => {
@@ -20,7 +20,7 @@ module.exports.equalPerms = (message, user, perms) => {
         .setTitle("Erreur")
         .addField(`${user} à les mêmes permissions`, perms);
 
-    message.channel.send(embed).then(m => m.delete(5000));
+    message.channel.send(embed);
 
 }
 
@@ -30,7 +30,7 @@ module.exports.botuser = (message) => {
         .setDescription("Vous ne pouvez pas ban un bot.")
         .setColor(config.red);
 
-    message.channel.send(embed).then(m => m.delete(5000));
+    message.channel.send(embed);
 }
 
 module.exports.cantfindUser = (channel) => {
@@ -39,7 +39,7 @@ module.exports.cantfindUser = (channel) => {
         .setDescription("Impossible de trouver l'utilisateur.")
         .setColor(config.red);
 
-    channel.send(embed).then(m => m.delete(5000));
+    channel.send(embed);
 }
 
 module.exports.noReason = (channel) => {
@@ -48,5 +48,5 @@ module.exports.noReason = (channel) => {
         .setDescription("Veuillez indiquer une raison.")
         .setColor(config.red);
 
-    channel.send(embed).then(m => m.delete(5000));
+    channel.send(embed);
 }
