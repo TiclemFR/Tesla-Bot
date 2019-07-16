@@ -4,73 +4,33 @@ const moment = require('moment');
 module.exports.run = async(client, message, args) => {
 
     const membre = message.mentions.members.first();
-
-    message.channel.send({
-        embed: {
-            color: 0xff0101,
-            title: 'Liste des commandes disponible',
-            thumbnail: {
-                url: null
-            },
-            fields: [
-                {
-                    name: '⚙ __**Général**__',
-                    value: 'Commandes principales'
-                },
-                {
-                    name: '**>** help',
-                    value: 'Affiche les commandes'
-                },
-                {
-                    name: '**>** ping',
-                    value: 'Affiche la latence du bot'
-                },
-                {
-                    name: "**>** stats [mention d'un utilisateur]",
-                    value: 'Affiche les stats d\'un utilisateur'
-                },
-                {
-                    name: '**>** site',
-                    value: 'Donne le lien vers le site de The Tesla'
-                },
-                {
-                    name: '**>** info',
-                    value: 'Donne des informations sur le bot'
-                },
-                {
-                    name: '🛠️ __**Modération**__',
-                    value: 'Commandes de modération'
-                },
-                {
-                    name: '**>** clear [nombre de message]',
-                    value: 'Supprime le nombre de message indiqué, SAUF ce de plus de 14 jours'
-                },
-                {
-                    name: '🔞 __**NSFW**__',
-                    value: "Commandes NSFW"
-                },
-                {
-                    name: '**>** neko | nekolewd',
-                    value: 'Donne des images aléatoire NSFW, ⚠🔞'
-                },
-                {
-                    name: '🎵 __**Musique**__ ⚠ **[Bêta]**',
-                    value: 'Pour la musique ⚠ peut être **instable**'
-                },
-                {
-                    name: '**>** play [Lien Youtube]',
-                    value: 'Lance la musique du lien youtube **(only)**'
-                },
-                {
-                    name: '**>** stop',
-                    value: 'Arrête la musique'
-                },
-            ],
-            footer: {
-                text: `Plus de commandes à venir`
-            }
-        }
-    })
+    
+    const EmbedHelp = new Discord.RichEmbed()
+    .setColor('#ff0101')
+    .setTitle('Liste des commandes disponible')
+    .addField('⚙️ __**Général**__', 'Commandes principales')
+    .addBlankField()
+    .addField('**>** help', 'Affiche les commandes')
+    .addField('**>** ping', 'Affiche la latence du bot')
+    .addField('**>** stats [Mention d\'un utilisateur', 'Affiche les stats d\'un utilisateur')
+    .addField('**>** site', 'Donne le lien vers le site de The Tesla')
+    .addField('**>** info', 'Donne des informations sur le bot')
+    .addBlankField()
+    .addField('🛠️ Modération', 'Commandes modération')
+    .addBlankField()
+    .addField('**>** kick [user] [reason]', 'Kick un utilisateur')
+    .addField('**>** ban [user] [reason]', 'Ban un utilisateur')
+    .addBlankField()
+    .addField('🔞 __**NSFW**__', 'Commandes NSFW')
+    .addBlankField()
+    .addField('**>** neko | nekolewd', 'Donne des images aléatoire NSFW, ⚠️🔞')
+    .addBlankField()
+    .addField('🎵 __**Musique**__ ⚠ **[Bêta]**', 'Pour la musique ⚠ peut être **instable**')
+    .addBlankField()
+    .addField('**>** play [Lien Youtube]', 'Lance la musique du lien youtube **(only)**')
+    .addField('**>** stop', 'Arrête la musique')
+    .setTimestamp()
+	.setFooter('Plus de commandes à venir');
 };
 
 
