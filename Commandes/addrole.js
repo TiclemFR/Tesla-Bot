@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     message.reply("Usage: t!addrole <user> <role>");
     return;
   }
-  let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+  let rMember = message.guild.member(message.mentions.members.first()) || message.guild.members.get(args[0]);
   if (!rMember) return errors.cantfindUser(message.channel);
   let role = args.join("").slice(22);
   if (!role) return message.reply("Spécifié un rôle!");
