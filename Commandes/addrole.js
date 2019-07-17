@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
   let gRole = message.guild.roles.find(`name`, role);
   if (!gRole) return message.reply("Impossible de trouver le rôle.");
 
-  if (rMember.roles.has(gRole.id)) return message.reply("Rôle déjà aquis.");
+  if (rMember.roles.has(gRole.id)) return message.reply("Rôle déjà attribué.");
   await (rMember.addRole(gRole.id));
 
   try {
