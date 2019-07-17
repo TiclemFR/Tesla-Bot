@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
   await (rMember.addRole(gRole.id));
 
   try {
-    await rMember.send(Vous avez bien donné le rôle ${gRole.name}`)
+    await rMember.send(`Vous avez bien donné le rôle ${gRole.name}`)
   } catch (e) {
     console.log(e.stack);
     message.channel.send(`Bravo <@${rMember.id}>, vous avez bien reçu le rôle ${gRole.name}. Nous avons essayer de vous DM mais vos DM son bloqué.`)
