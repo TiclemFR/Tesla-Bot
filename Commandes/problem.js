@@ -3,7 +3,7 @@ const moment = require('moment');
 
 module.exports.run = async(client, message, args) => {
   
-  const membre = message.author;
+  const membre = message.author.tag;
   
   const EmbedProb = new Discord.RichEmbed()
   .setColor('#e40a0a')
