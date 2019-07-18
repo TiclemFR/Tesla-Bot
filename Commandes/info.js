@@ -43,7 +43,7 @@ module.exports.run = async(client, message, args) => {
                 },
             ],
             footer: {
-                text: `Plus d'info à venir`
+                text: `Information de Tesla Bot`
             }
         }
     })
