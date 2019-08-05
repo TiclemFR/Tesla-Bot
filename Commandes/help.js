@@ -11,7 +11,7 @@ module.exports.run = async(client, message, args) => {
     .addField('⚙️ __**Général**__', 'Commandes principales')
     .addField('**>** help', 'Affiche les commandes')
     .addField('**>** ping', 'Affiche la latence du bot')
-    .addField('**>** stats [Mention d\'un utilisateur', 'Affiche les stats d\'un utilisateur')
+    .addField('**>** stats [Mention d\'un utilisateur]', 'Affiche les stats d\'un utilisateur')
     .addField('**>** site', 'Donne le lien vers le site de The Tesla')
     .addField('**>** info', 'Donne des informations sur le bot')
     .addField('**>** serverinfo', 'Donnes des information sur le serveur')
