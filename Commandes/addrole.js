@@ -12,11 +12,11 @@ module.exports.run = async (bot, message, args) => {
   let rMember = message.guild.member(message.mentions.members.first()) || message.guild.members.get(args[0]);
   if (!rMember) return errors.cantfindUser(message.channel);
   let role = args.join("").slice(22);
-  if (!role) return message.reply("Spécifié un rôle!");
+  if (!role) return message.reply("❌ Spécifié un rôle!");
   let gRole = message.guild.roles.find(`name`, role);
-  if (!gRole) return message.reply("Impossible de trouver le rôle.");
+  if (!gRole) return message.reply("❌ Impossible de trouver le rôle.");
 
-  if (rMember.roles.has(gRole.id)) return message.reply("Rôle déjà attribué.");
+  if (rMember.roles.has(gRole.id)) return message.reply("❌ Rôle déjà attribué.");
   await (rMember.addRole(gRole.id));
 
   try {
