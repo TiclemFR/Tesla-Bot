@@ -34,6 +34,10 @@ module.exports.run = async(client, message, args) => {
                     value: 't!'
                 },
                 {
+                    name: '🗒️ __Émojis Utilisés__',
+                    value: '❌: Erreur/Action impossible | ✅: Action réalisé | ⚠️: Problème détecté'
+                },
+                {
                     name: '🌐 __Website__',
                     value: 'https://thetesla.voxan24.me/'
                 },
