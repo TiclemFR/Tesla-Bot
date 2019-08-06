@@ -24,7 +24,7 @@ module.exports.run = async(client, message, args) => {
     .addField('**>** delrole [user [role]', 'Retire le rôle à un utilisateur ⚠')
     .addBlankField()
     .addField('🔞 __**NSFW**__', 'Commandes NSFW')
-    .addField('**>** neko | nekolewd', 'Donne des images aléatoire NSFW, ⚠️🔞')
+    .addField('**>** neko | nekolewd', 'Donne des images aléatoire NSFW, ⚠🔞')
     .addBlankField()
     .addField('🎵 __**Musique**__ ⚠ **[Bêta]**', 'Peut être **instable**')
     .addField('**>** play [Lien Youtube]', 'Lance la musique du lien youtube **(only)**')
