@@ -34,8 +34,8 @@ fs.readdir('./Events/', (error, f) => {
     });
     //SYSTEME MONEY
 
-    if(!money[MessageChannel.author.id]) {
-        money[MessageChannel.author.id] = {
+    if(!money[message.author.id]) {
+        money[message.author.id] = {
             money: 0
         }
     }
