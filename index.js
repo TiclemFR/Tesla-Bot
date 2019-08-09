@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-
+const money = require("../modules/money.json")
 const fs = require('fs');
 
-client.login(process.env.token);
+client.login('NTkwMjEyNDAxNjUyMTcwODQz.XQjCSw.GeXaZJLJunr80LEj0Hm7tmPItQg');
 
 client.commands = new Discord.Collection();
 
@@ -32,4 +32,23 @@ fs.readdir('./Events/', (error, f) => {
 
         client.on(event, events.bind(null, client));
     });
+    //SYSTEME MONEY
+
+    if(!money[MessageChannel.author.id]) {
+        money[MessageChannel.author.id] = {
+            money: 0
+        }
+    }
+
+    let baseMoney = Math.floor(Math.random() * 20) + 1;
+    let ajoutMoney = Math.floor(Math.random() * 5) +1;
+
+    if (ajoutMoney === baseMoney) {
+        money[message.author.id] = {
+            money: money[message.author.id].money + ajoutMoney  
+        };
+        fs.writeFile('../modules/money.json', JSON.stringify(money), error =>{
+            if (error) console.error(error)
+        });
+    }
 });
