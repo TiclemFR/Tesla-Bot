@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const money = require("../modules/money.json")
+const money = require("modules/money.json")
 const fs = require('fs');
 
 client.login('NTkwMjEyNDAxNjUyMTcwODQz.XQjCSw.GeXaZJLJunr80LEj0Hm7tmPItQg');
