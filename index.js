@@ -47,7 +47,7 @@ fs.readdir('./Events/', (error, f) => {
         money[message.author.id] = {
             money: money[message.author.id].money + ajoutMoney  
         };
-        fs.writeFile('modules/money.json', JSON.stringify(money), error =>{
+        fs.writeFile('./modules/money.json', JSON.stringify(money), error =>{
             if (error) console.error(error)
         });
     }
