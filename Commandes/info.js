@@ -15,7 +15,7 @@ module.exports.run = async(client, message, args) => {
             fields: [
                 {
                     name: '🔰 __Créateur__',
-                    value: 'Ticlem83'
+                    value: 'Ticlem'
                 },
                 {
                     name: '📍 __Pseudo__',
@@ -35,7 +35,7 @@ module.exports.run = async(client, message, args) => {
                 },
                 {
                     name: '🗒️ __Émojis Utilisés__',
-                    value: '❌: Erreur/Action impossible | ✅: Action réalisé | ⚠: Problème détecté'
+                    value: '❌: Erreur/Action impossible | ✅: Action réalisé | ⚠: Problème détecté/Avertissement'
                 },
                 {
                     name: '🌐 __Website__',
