@@ -33,7 +33,7 @@ fs.readdir('./Events/', (error, f) => {
         client.on(event, events.bind(null, client));
     });
     //SYSTEME MONEY
-module.exports = {
+module.exports = async(client, message, args) => {
     if(!money[message.author.id]) {
         money[message.author.id] = {
             money: 0
