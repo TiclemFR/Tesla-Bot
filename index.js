@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const money = require("./modules/money.json")
 const fs = require('fs');
-
+module.exports = async(client, message, args) => {
 client.login(process.env.token);
 
 client.commands = new Discord.Collection();
@@ -33,7 +33,7 @@ fs.readdir('./Events/', (error, f) => {
         client.on(event, events.bind(null, client));
     });
     //SYSTEME MONEY
-module.exports = async(client, message, args) => {
+
     if(!money[message.author.id]) {
         money[message.author.id] = {
             money: 0
