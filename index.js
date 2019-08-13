@@ -51,5 +51,5 @@ fs.readdir('./Events/', (error, f) => {
             if (error) console.error(error)
         });
     }
-}
+})
 });
