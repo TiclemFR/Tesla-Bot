@@ -1,30 +1,21 @@
 const Discord = require("discord.js");
-const errors = require("../modules/errors.js");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = (client, message, args) => {
+    if (!args.join(' ')) { return message.channel.send('Vous n\'avez pas la spécifié un nom de role !'); }
+    if (!message.guild.member(message.author.id).hasPermission('MANAGE_ROLES')) { return message.channel.send('Vous n\'avez pas la permission `gérer les roles` !'); }
+    if (!message.guild.member(client.user.id).hasPermission('MANAGE_ROLES')) { return message.channel.send('Je n\'ai pas la permission `gérer les roles` !'); }
 
-  if (!message.member.hasPermission("MANAGE_ROLES")) return errors.noPerms(message, "MANAGE_ROLES");
-  if(args[0] == "help"){
-    message.reply("Usage: !removerole <user> <role>");
-    return;
-  }
-  let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-  if(!rMember) return errors.cantfindUser(message.channel);
-  let role = args.join("").slice(22);
-  if(!role) return message.reply("❌ Spécifié un rôle!");
-  let gRole = message.guild.roles.find(`name`, role);
-  if(!gRole) return message.reply("❌ Impossible de trouver le rôle.");
+    let member = message.guild.member(message.author.id);
+    let role = message.guild.roles.find((r) => r.name.toLowerCase() === args.join(' ').toLowerCase() || r.id === args.join(' '));
 
-  if(!rMember.roles.has(gRole.id)) return message.reply("❌ Le rôle n'est déjà pas attribué.");
-  await(rMember.removeRole(gRole.id));
-
-  try{
-    await rMember.send(`RIP, vous avez perdu le rôle ${gRole.name}.`)
-  }catch(e){
-    message.channel.send(`RIP <@${rMember.id}>, Nous vous avons retirer ${gRole.name}. Nous avons essayer de vous DM mais vo DM son bloqué.`)
-  }
-}
+    if (!role) { return message.channel.send('Ce role n\'existe pas !'); }
+    if (!member.roles.has(role.id)) { return message.channel.send('Vous n\'avez pas ce role !'); }
+    
+        member.removeRole(role.id)
+            .then(() => message.channel.send('Vous n\'avez désormais plus le role ' + role.toString()))
+            .catch(console.error);
+};
 
 module.exports.help = {
-  name: "delrole"
-}
+    name: 'delrole'
+};
