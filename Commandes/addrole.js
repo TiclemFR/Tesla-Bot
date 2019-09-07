@@ -1,32 +1,21 @@
-const Discord = require("discord.js");
-const errors = require("../modules/errors.js");
+const Discord = require('discord.js');
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = (client, message, args) => {
+    if (!args.join(' ')) { return message.channel.send('Vous n\'avez pas la spécifié un nom de role !'); }
+    if (!message.guild.member(message.author.id).hasPermission('MANAGE_ROLES')) { return message.channel.send('Vous n\'avez pas la permission `gérer les roles` !'); }
+    if (!message.guild.member(client.user.id).hasPermission('MANAGE_ROLES')) { return message.channel.send('Je n\'ai pas la permission `gérer les roles` !'); }
+    
+    let member = message.guild.member(message.author.id);
+    let role = message.guild.roles.find((r) => r.name.toLowerCase() === args.join(' ').toLowerCase() || r.id === args.join(' '));
 
-  //!addrole @andrew Dog Person
-  if (!message.member.hasPermission("MANAGE_ROLES")) return errors.noPerms(message, "MANAGE_ROLES");
-  if (args[0] == "help") {
-    message.reply("Usage: t!addrole <user> <role>");
-    return;
-  }
-  let rMember = message.guild.member(message.mentions.members.first()) || message.guild.members.get(args[0]);
-  if (!rMember) return errors.cantfindUser(message.channel);
-  let role = args.join("").slice(22);
-  if (!role) return message.reply("❌ Spécifié un rôle!");
-  let gRole = message.guild.roles.find(`name`, role);
-  if (!gRole) return message.reply("❌ Impossible de trouver le rôle.");
-
-  if (rMember.roles.has(gRole.id)) return message.reply("❌ Rôle déjà attribué.");
-  await (rMember.addRole(gRole.id));
-
-  try {
-    await rMember.send(`Le rôle ${gRole.name} vous a été attribué`)
-  } catch (e) {
-    console.log(e.stack);
-    message.channel.send(`Bravo <@${rMember.id}>, vous avez bien reçu le rôle ${gRole.name}. Nous avons essayer de vous DM mais vos DM son bloqué.`)
-  }
-}
+    if (!role) { return message.channel.send('Ce role n\'existe pas !'); }
+    if (member.roles.has(role.id)) { return message.channel.send('Vous avez déjà ce role !'); }
+    
+        member.addRole(role.id)
+            .then(() => message.channel.send('Vous avez désormais le role ' + role.toString()))
+            .catch(console.error);
+};
 
 module.exports.help = {
-  name: "addrole"
-}
+    name: 'addrole'
+};
