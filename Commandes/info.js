@@ -26,7 +26,7 @@ module.exports.run = async(client, message, args) => {
                     value: '⚠ **BÊTA** 2.0'
                 },
                 {
-                    name: '🏳__Langue du Bot__',
+                    name: '🏳__Langues Disponibles__',
                     value: '🇫🇷FR'
                 },
                 {
