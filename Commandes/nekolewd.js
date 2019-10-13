@@ -3,7 +3,7 @@ const { get } = require('https');
 module.exports.run = async(client, message, args) => {
 
     if(!message.channel.nsfw) {
-        return message.channel.send('❌ ERREUR, ⚠ cette commande contient du contenu chôquant, il doit être utilisé dans un salon NSFW !');
+        return message.channel.send('❌ ERREUR, ⚠ cette commande contient du contenu pouvant heurter la sensibilité des plus jeunes, il doit être utilisé dans un salon NSFW !');
     }
 
     get('https://neko-love.xyz/api/v1/nekolewd', (res) => {
