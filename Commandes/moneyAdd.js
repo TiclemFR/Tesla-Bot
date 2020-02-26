@@ -2,11 +2,8 @@ const Discord = require("discord.js");
 const money = require('../modules/money.json');
 
 module.exports.run = async (bot, message, args) => {
-    if(!money[message.author.id]) {
-        money[message.author.id] = {
-            money: 0
-        }
-    }
+
+    await writeFileAsync(money, JSON.stringify({"message.author.id":{"money": +10}}))
 
     let userMoney = money[message.author.id].money;
     userMoney = userMoney + 10;
