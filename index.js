@@ -32,24 +32,5 @@ fs.readdir('./Events/', (error, f) => {
 
         client.on(event, events.bind(null, client));
     });
-    //SYSTEME MONEY
-module.exports = async(client, message, args) => {
-    if(!money[message.author.id]) {
-        money[message.author.id] = {
-            money: 0
-        }
-    }
 
-    let baseMoney = Math.floor(Math.random() * 20) + 1;
-    let ajoutMoney = Math.floor(Math.random() * 5) +1;
-
-    if (ajoutMoney === baseMoney) {
-        money[message.author.id] = {
-            money: money[message.author.id].money + ajoutMoney  
-        };
-        fs.writeFile('./modules/money.json', JSON.stringify(money), error =>{
-            if (error) console.error(error)
-        });
-    }
-}
 });
