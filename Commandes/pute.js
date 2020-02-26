@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 module.exports.run = async(client, message, args) => {
 
-   message.channel.send('🖕 Ta mère la pute !');
+   message.channel.send('🖕 C\'est ta mère la pute !');
 };
 
 module.exports.help = {
