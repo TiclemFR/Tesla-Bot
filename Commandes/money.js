@@ -1,8 +1,13 @@
 const Discord = require("discord.js");
 const money = require('../modules/money.json');
+const fs = require('fs');
 
 module.exports.run = async (bot, message, args) => {
+    
     if(!money[message.author.id]) {
+        async function writeJsonFile(file, data) {
+        await writeFileAsync(money, JSON.stringify({"message.author.id":{"money": 0}}))
+        }
         money[message.author.id] = {
             money: 0
         }
