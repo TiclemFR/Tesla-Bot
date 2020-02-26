@@ -5,10 +5,6 @@ const fs = require('fs');
 module.exports.run = async (bot, message, args) => {
     
     if(!money[message.author.id]) {
-        async function writeJsonFile(file, data) {
-    await writeFileAsync(file, JSON.stringify(data))
-}
-        writeJsonFile(money,{"message.author.id":{"money": 0}})
         money[message.author.id] = {
             money: 0
         }
