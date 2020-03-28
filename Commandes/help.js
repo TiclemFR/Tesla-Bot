@@ -15,7 +15,7 @@ module.exports.run = async(client, message, args) => {
     .addField('**>** site', 'Donne le lien vers le site de The Tesla')
     .addField('**>** info', 'Donne des informations sur le bot')
     .addField('**>** serverinfo', 'Donnes des information sur le serveur')
-    .addField('**>** problem', 'Liste tous les problèmes de **Tesla Bot**')
+    .addField('**>** problemes', 'Liste tous les problèmes de **Tesla Bot**')
     .addBlankField()
     .addField('🛠️ Modération', 'Commandes modération')
     .addField('**>** kick [user] [reason]', 'Kick un utilisateur')
