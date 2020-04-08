@@ -6,8 +6,8 @@ module.exports.run = (client, message, args) => {
     if (!message.guild.member(message.author.id).hasPermission('MANAGE_ROLES')) { return message.channel.send('Vous n\'avez pas la permission `gérer les roles` !'); }
     if (!message.guild.member(client.user.id).hasPermission('MANAGE_ROLES')) { return message.channel.send('Je n\'ai pas la permission `gérer les roles` !'); }
     
-    let member =  message.guild.member(message.mentions.users.first());
-    let role = message.guild.roles.find((r) => r.name.toLowerCase() === args[1].join(' ').toLowerCase() || r.id === args[1].join(' '));
+    let member =  message.guild.members.get(args[0]));
+    let role = message.guild.roles.find((r) => r.name.toLowerCase() === args.join(' ').toLowerCase() || r.id === args.join(' '));
 
     if (!role) { return message.channel.send('Ce role n\'existe pas !'); }
     if (member.roles.has(role.id)) { return message.channel.send('Vous avez déjà ce role !'); }
