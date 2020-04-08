@@ -1,11 +1,12 @@
 const Discord = require('discord.js');
 
 module.exports.run = (client, message, args) => {
+    let member =  message.mentions.members.first();
     if (!args.join(' ')) { return message.channel.send('Vous n\'avez pas la spécifié un nom de role !'); }
     if (!message.guild.member(message.author.id).hasPermission('MANAGE_ROLES')) { return message.channel.send('Vous n\'avez pas la permission `gérer les roles` !'); }
     if (!message.guild.member(client.user.id).hasPermission('MANAGE_ROLES')) { return message.channel.send('Je n\'ai pas la permission `gérer les roles` !'); }
     
-    let member =  message.mentions.members.first();
+    
     let role = message.guild.roles.find((r) => r.name.toLowerCase() === args.join(' ').toLowerCase() || r.id === args.join(' '));
 
     if (!role) { return message.channel.send('Ce role n\'existe pas !'); }
