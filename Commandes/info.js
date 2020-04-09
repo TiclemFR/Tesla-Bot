@@ -10,7 +10,7 @@ module.exports.run = async(client, message, args) => {
             color: 0xc006eb,
             title: 'Information du bot',
             thumbnail: {
-                url: null
+                url: message.client.displayAvatarURL
             },
             fields: [
                 {
@@ -43,7 +43,7 @@ module.exports.run = async(client, message, args) => {
                 },
                 {
                     name: '🔄 __Developpement__',
-                    value: 'Prochaine fonctionnalité de __**Tesla BOT**__: **A venir__**'
+                    value: 'Prochaine fonctionnalité de __**Tesla BOT**__: **__A venir__**'
                 },
             ],
             footer: {
