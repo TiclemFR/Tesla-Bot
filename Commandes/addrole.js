@@ -14,7 +14,7 @@ module.exports.run = async(client, message, args) => {
     if (member.roles.has(role.id)) { return message.channel.send('Vous avez déjà ce role !'); }
     
         member.addRole(role.id)
-            .then(() => message.channel.send(member' à désormais le role ' + role.toString()))
+            .then(() => message.channel.send(member +' à désormais le role ' + role.toString()))
             .catch(console.error);
 };
 
