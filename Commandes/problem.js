@@ -9,7 +9,6 @@ module.exports.run = async(client, message, args) => {
   .setColor('#e40a0a')
   .setTitle('Liste des problèmes de **Tesla Bot**')
   .addField('Musique', 'Pas de système de queue, doit être stop pour remettre une musique')
-  .addField('addrole/delrole', 'Ne fonctionne que pour soi')
   .setTimestamp()
   .setFooter(`Problèmes de Tesla Bot, Nous essayons de régler ces problèmes au plus vite | Demandé par ${membre}`);
   
