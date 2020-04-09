@@ -10,7 +10,7 @@ module.exports.run = async(client, message, args) => {
             color: 0xc006eb,
             title: 'Information du bot',
             thumbnail: {
-                url: message.guild.member(client.user.id)
+                url: 'https://imgur.com/a/WcDO18n'
             },
             fields: [
                 {
