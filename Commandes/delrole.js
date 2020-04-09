@@ -13,7 +13,7 @@ module.exports.run = (client, message, args) => {
     if (!member.roles.has(role.id)) { return message.channel.send('Vous n\'avez pas ce role !'); }
     
         member.removeRole(role.id)
-            .then(() => message.channel.send('Vous n\'avez désormais plus le role ' + role.toString()))
+            .then(() => message.channel.send(member' n\'à désormais plus le role ' + role.toString()))
             .catch(console.error);
 };
 
