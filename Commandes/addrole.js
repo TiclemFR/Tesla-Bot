@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-module.exports.run = (client, message, args) => {
+module.exports.run = async(client, message, args) => {
     
     if (!args.join(' ')) { return message.channel.send('Vous n\'avez pas la spécifié un nom de role !'); }
     if (!message.guild.member(message.author.id).hasPermission('MANAGE_ROLES')) { return message.channel.send('Vous n\'avez pas la permission `gérer les roles` !'); }
