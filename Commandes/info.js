@@ -10,7 +10,7 @@ module.exports.run = async(client, message, args) => {
             color: 0xc006eb,
             title: 'Information du bot',
             thumbnail: {
-                url: null
+                url: "https://cdn.discordapp.com/attachments/589885773231423507/706574129951932436/logo2.jpg"
             },
             fields: [
                 {
