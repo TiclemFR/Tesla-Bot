@@ -1,4 +1,4 @@
-var Discord = require('discord.js')
+const Discord = require('discord.js')
 
 module.exports.run = async(bot, message, args) => {
 
@@ -6,8 +6,8 @@ module.exports.run = async(bot, message, args) => {
     if (message.guild.me.voiceChannel) return message.channel.send('❌ Le Bot est déjà connecté à un salon !')
 
     
-    const voiceChannel = message.member.voiceChannel;
-    const dispatcher = connection.playFile('https://lyd.nrk.no/nrk_radio_mp3_mp3_h');
+    const voiceChannel = message.member.voiceChannel.join;
+    const dispatcher = connection.play('https://lyd.nrk.no/nrk_radio_mp3_mp3_h');
     message.channel.send(`NRK mp3 en cours de l'ecture !`);
 };
 
