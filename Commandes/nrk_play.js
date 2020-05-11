@@ -5,7 +5,7 @@ module.exports.run = async(bot, message, args) => {
 
     if (!message.member.voiceChannel) return message.channel.send('❌ Connectez vous à un salon vocal !')
     if (message.guild.me.voiceChannel) return message.channel.send('❌ Le Bot est déjà connecté à un salon !')
-    
+    const client = message.guild.me.voiceChannel;
     const broadcast = client.createVoiceBroadcast();
     
     const voiceChannel = message.member.voiceChannel;
