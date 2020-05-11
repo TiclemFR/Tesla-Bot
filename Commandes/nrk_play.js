@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-var bot = new Discord.Client(http);
+var bot = new Discord.Client();
 
 module.exports.run = async(bot, message, args) => {
 
@@ -9,6 +9,7 @@ module.exports.run = async(bot, message, args) => {
     
     const voiceChannel = message.member.voiceChannel;
     voiceChannel.join()
+    const client = message.guild.me.voiceChannel;
     const broadcast = client.voice.createBroadcast();
 broadcast.play('https://lyd.nrk.no/nrk_radio_mp3_mp3_h');
 for (const connection of client.voice.connections.values()) {
