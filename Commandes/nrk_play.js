@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
+var bot = new Discord.Client();
 
-module.exports.run = async(client, message, args) => {
+module.exports.run = async(bot, message, args) => {
 
     if (!message.member.voiceChannel) return message.channel.send('❌ Connectez vous à un salon vocal !')
     if (message.guild.me.voiceChannel) return message.channel.send('❌ Le Bot est déjà connecté à un salon !')
