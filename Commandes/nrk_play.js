@@ -8,7 +8,7 @@ module.exports.run = async(bot, message, args) => {
 
     
     const voiceChannel = message.member.voiceChannel;
-    voiceChannel.join().then(connection =>{const dispatcher = connection.playFile('https://lyd.nrk.no/nrk_radio_mp3_mp3_h');}).catch(err => console.log(err));
+    voiceChannel.join().then(connection =>{const dispatcher = connection.playFile('https://lyd.nrk.no/nrk_radio_mp3_mp3_h');dispatcher.on("end", end => {voiceChannel.leave();});}).catch(err => console.log(err));
     
     message.channel.send(`NRK mp3 en cours de l'ecture !`);
 };
