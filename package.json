@@ -10,7 +10,7 @@
   "author": "TiclemFR",
   "licence": "ISC",
   "dependencies": {
-    "discord.js": "^11.2.1",
+    "discord.js": "^12.2.0",
     "node-pre-gyp": "^0.14.0"
   }
 }
