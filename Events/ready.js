@@ -1,4 +1,4 @@
 module.exports = async(client) => {
 
-    client.user.changePresence(activity: "t!help --> Afficher l\'aide | Dernier ajout: Liste des problèmes");
+    client.user.changePresence(discord.Game("t!help --> Afficher l\'aide | Dernier ajout: Liste des problèmes"));
 };
