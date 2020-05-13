@@ -21,7 +21,7 @@ module.exports.run = async(client, message, args) => {
     .addFields('**>** kick [user] [reason]', 'Kick un utilisateur')
     .addFields('**>** ban [user] [reason]', 'Ban un utilisateur')
     .addFields('**>** addrole [user] [role]', 'Ajoute le rôle à un utilisateur')
-    .addFields('**>** delrole [user [role]', 'Retire le rôle à un utilisateur')
+    .addFields('**>** delrole [user] [role]', 'Retire le rôle à un utilisateur')
     .addBlankFields()
     .addFields('🔞 __**NSFW**__', 'Commandes NSFW')
     .addFields('**>** neko | nekolewd', 'Donne des images aléatoire NSFW, 🔞')
