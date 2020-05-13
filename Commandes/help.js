@@ -8,30 +8,32 @@ module.exports.run = async(client, message, args) => {
     const EmbedHelp = new Discord.MessageEmbed()
     .setColor('#136ee2')
     .setTitle('Liste des commandes disponible')
-    .addField('⚙️ __**Général**__', 'Commandes principales')
-    .addField('**>** help', 'Affiche les commandes')
-    .addField('**>** ping', 'Affiche la latence du bot')
-    .addField('**>** stats [Mention d\'un utilisateur]', 'Affiche les stats d\'un utilisateur')
-    .addField('**>** site', 'Donne le lien vers le site de The Tesla')
-    .addField('**>** info', 'Donne des informations sur le bot')
-    .addField('**>** serverinfo', 'Donnes des information sur le serveur')
-    .addField('**>** problemes', 'Liste tous les problèmes de **Tesla Bot**')
-    .addBlankField()
-    .addField('🛠️ Modération', 'Commandes modération')
-    .addField('**>** kick [user] [reason]', 'Kick un utilisateur')
-    .addField('**>** ban [user] [reason]', 'Ban un utilisateur')
-    .addField('**>** addrole [user] [role]', 'Ajoute le rôle à un utilisateur')
-    .addField('**>** delrole [user] [role]', 'Retire le rôle à un utilisateur')
-    .addBlankField()
-    .addField('🔞 __**NSFW**__', 'Commandes NSFW')
-    .addField('**>** neko | nekolewd', 'Donne des images aléatoire NSFW, 🔞')
-    .addBlankField()
-    .addField('🎵 __**Musique**__ ⚠ **[Bêta]**', 'Peut être **instable**')
-    .addField('**>** play [Lien Youtube]', 'Lance la musique du lien youtube **(only)**')
-    .addField('**>** stop', 'Arrête la musique')
+    .addFields(
+        {name:'⚙️ __**Général**__' , value: 'Commandes principales'},
+        {name: '**>** help', value: 'Affiche les commandes'},
+        {name: '**>** ping', value: 'Affiche la latence du bot'},
+        {name: '**>** stats [Mention d\'un utilisateur]', value: 'Affiche les stats d\'un utilisateur'},
+        {name: '**>** site', value: 'Donne le lien vers le site de The Tesla'},
+        {name: '**>** info', value: 'Donne des informations sur le bot'},
+        {name: '**>** serverinfo', value: 'Donnes des information sur le serveur'},
+        {name: '**>** problemes', value: 'Liste tous les problèmes de **Tesla Bot**'},
+        {name: '\u200B', value: '\u200B'}, //BlankField
+        {name: '🛠️ Modération', value: 'Commandes de modération'},
+        {name: '**>** kick [user] [reason]', value: 'Kick un utilisateur'},
+        {name: '**>** ban [user] [reason]', value: 'Ban un utilisateur'},
+        {name: '**>** addrole [user] [role]', value: 'Ajoute le rôle à un utilisateur'},
+        {name: '**>** delrole [user] [role]', value: 'Retire le rôle à un utilisateur'},
+        {name: '\u200B', value: '\u200B'}, //BlankField
+        {name: '🔞 __**NSFW**__', value: 'Commandes NSFW'},
+        {name: '**>** neko | nekolewd', value: 'Donne des images aléatoire NSFW, 🔞'},
+        {name: '\u200B', value: '\u200B'}, //BlankField
+        {name: '🎵 __**Musique**__ ⚠ **[Bêta]**', value: 'Commandes de musique'},
+        {name: '**>** stop', value: 'Arrête la musique'},
+        )
     .setTimestamp()
     .setFooter('Plus de commandes à venir | Demandé par ${membre}');
-	
+
+
 message.channel.send(EmbedHelp);
 };
 
