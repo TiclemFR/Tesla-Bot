@@ -31,7 +31,7 @@ module.exports.run = async(client, message, args) => {
         {name: '**>** stop', value: 'Arrête la musique'},
         )
     .setTimestamp()
-    .setFooter('Plus de commandes à venir', 'Demandé par ');//+ ${membre.username}
+    .setFooter('Plus de commandes à venir | Demandé par ' + ${membre.username});
 
 
 message.channel.send(EmbedHelp);
