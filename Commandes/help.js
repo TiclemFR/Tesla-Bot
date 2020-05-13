@@ -3,7 +3,7 @@ const moment = require('moment');
 
 module.exports.run = async(client, message, args) => {
 
-    const membre = message.mentions.members.first();
+    const membre = message.author;
     
     const EmbedHelp = new Discord.MessageEmbed()
     .setColor('#136ee2')
@@ -31,7 +31,7 @@ module.exports.run = async(client, message, args) => {
         {name: '**>** stop', value: 'Arrête la musique'},
         )
     .setTimestamp()
-    .setFooter('Plus de commandes à venir', 'Demandé par 'membre);
+    .setFooter('Plus de commandes à venir', 'Demandé par '${membre.username});
 
 
 message.channel.send(EmbedHelp);
