@@ -35,7 +35,7 @@ module.exports.run = async(client, message, args) => {
                 },
                 {
                     name: '🗒️ __Émojis Utilisés__',
-                    value: '❌: Erreur/Action impossible | ✅: Action réalisé | ⚠: Problème détecté/Avertissement'
+                    value: '❌: Erreur/Action impossible | ✅: Action réalisé | ⚠: Problème détecté/Avertissement | 🔞: Contenus Adulte'
                 },
                 {
                     name: '🌐 __Website__',
