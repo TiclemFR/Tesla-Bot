@@ -37,7 +37,6 @@ module.exports.run = async(client, message, args) => {
 message.channel.send(EmbedHelp);
 };
 
-
 module.exports.help = {
     name: "help"
 }
