@@ -1,5 +1,8 @@
-const Discord = require('discord.js');
 module.exports = async(client) => {
 
-	new Discord.Presence(client).activities('t!help --> Afficher l\'Aide');
+    client.user.setGame({
+        game: {
+            name: "t!help --> Afficher l\'aide | Dernier ajout: Liste des problèmes"
+        }
+    })
 };
