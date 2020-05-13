@@ -13,7 +13,7 @@ module.exports.run = async(client, message, args) => {
     if (member.roles.cache.has(role.id)) { return message.channel.send('Ce membre a déjà ce role !'); }
     
         member.roles.add(role.id)
-            .then(() => message.channel.send(member.username +' à désormais le role ' + role.toString()))
+            .then(() => message.channel.send(member.id +' à désormais le role ' + role.toString()))
             .catch(console.error);
 };
 
