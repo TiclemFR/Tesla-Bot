@@ -30,7 +30,6 @@ fs.readdir('./Events/', (error, f) => {
         const event = f.split('.')[0];
 
         client.on(event, events.bind(null, client));
-        client.user.setActivity('t!help --> Afficher l\'aide', {type: 'playing'});
     });
 
 });
