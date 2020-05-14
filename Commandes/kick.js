@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
     if(!kReason) return errors.noReason(message.channel);
     if(kUser.hasPermission("KICK_MEMBERS")) return errors.equalPerms(message, kUser, "KICK_MEMBERS");
 
-    let kickEmbed = new Discord.RichEmbed()
+    let kickEmbed = new Discord.MessageEmbed()
     .setDescription("~Kick~")
     .setColor("#e56b00")
     .addFields(
@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
             {name: 'Time', value: moment.utc(message.createdAt).format('LLL')},
             {name: 'Reason', value: kReason},
         );
-    
+
     message.guild.member(kUser).kick(kReason);
     message.channel.send(kickEmbed);
 }
