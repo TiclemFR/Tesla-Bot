@@ -11,6 +11,7 @@ module.exports.run = async(bot, message, args) => {
     const voiceChannel = message.member.voice.channel;
     voiceChannel.join()
     const dispatcher = broadcast.play('https://lyd.nrk.no/nrk_radio_mp3_mp3_h');
+    connection1.play(broadcast);
 
     
     message.channel.send(`NRK mp3 en cours de l'ecture !`);
