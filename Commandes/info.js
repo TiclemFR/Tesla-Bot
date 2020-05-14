@@ -23,7 +23,7 @@ module.exports.run = async(client, message, args) => {
                 },
                 {
                     name: '⚙ __Version du Bot__',
-                    value: '⚠ **ALPHA** 0.2'
+                    value: '1.0'
                 },
                 {
                     name: '🏳__Langues Disponibles__',
