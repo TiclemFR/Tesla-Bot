@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const errors = require("../modules/errors.js");
-const moment = require('moment')
+const moment = require('moment');
 
 module.exports.run = async (bot, message, args) => {
 
@@ -16,14 +16,16 @@ module.exports.run = async (bot, message, args) => {
     if(!bReason) return errors.noReason(message.channel);
     if(bUser.hasPermission("BAN_MEMBERS")) return errors.equalPerms(message, bUser, "BAN_MEMBERS");
 
-    let banEmbed = new Discord.RichEmbed()
+    let banEmbed = new Discord.MessageEmbed()
     .setDescription("~Ban~")
     .setColor("#bc0000")
-    .addField("Banned User", `${bUser} with ID ${bUser.id}`)
-    .addField("Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("Banned In", message.channel)
-    .addField("Time", moment.utc(message.createdAt).format('LLL'))
-    .addField("Reason", bReason);
+    .addFields(
+            {name: 'Banned User', value: `${bUser} with ID ${bUser.id}`},
+            {name: 'Banned By', value: `<@${message.author.id}> with ID ${message.author.id}`},
+            {name: 'Banned In', value: message.channel},
+            {name: 'Time', value: moment.utc(message.createdAt).format('LLL')},
+            {name: 'Reason', value: bReason},
+        );
 
     message.guild.member(bUser).ban(bReason);
     message.channel.send(banEmbed);

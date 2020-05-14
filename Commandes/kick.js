@@ -19,12 +19,14 @@ module.exports.run = async (bot, message, args) => {
     let kickEmbed = new Discord.RichEmbed()
     .setDescription("~Kick~")
     .setColor("#e56b00")
-    .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
-    .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("Kicked In", message.channel)
-    .addField("Time", moment.utc(message.createdAt).format('LLL'))
-    .addField("Reason", kReason);
-
+    .addFields(
+            {name: 'Kicked User', value: `${kUser} with ID ${kUser.id}`},
+            {name: 'Kicked By', value: `<@${message.author.id}> with ID ${message.author.id}`},
+            {name: 'Kicked In', value: message.channel},
+            {name: 'Time', value: moment.utc(message.createdAt).format('LLL')},
+            {name: 'Reason', value: kReason},
+        );
+    
     message.guild.member(kUser).kick(kReason);
     message.channel.send(kickEmbed);
 }
