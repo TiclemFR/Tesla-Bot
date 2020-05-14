@@ -8,7 +8,7 @@ module.exports.run = async(bot, message, args) => {
     const client = message.guild.me.voice.channel;
     const voiceChannel = message.member.voice.channel;
     voiceChannel.join()
-    const broadcast = client.voice.createBroadcast();
+    const broadcast = client.createBroadcast();
     
     
     const dispatcher = broadcast.play('https://lyd.nrk.no/nrk_radio_mp3_mp3_h');
