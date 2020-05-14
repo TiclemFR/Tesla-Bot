@@ -21,6 +21,7 @@
     "moment": "^2.25.3",
     "node-pre-gyp": "^0.14.0",
     "node-superfetch": "^0.1.10",
+    "opusscript": "0.0.7",
     "update-node": "^0.1.0",
     "ytdl-core": "^2.1.2"
   }
