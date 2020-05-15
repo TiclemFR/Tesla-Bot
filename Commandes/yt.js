@@ -14,8 +14,8 @@ module.exports.run = async(client, message, args) => {
 
 	const info = await ytdl.getInfo(args[0]);
 	voiceChannel.join().then(connection => {
-	const youtube = ytdl(args[0], { filter: 'audioonly' });
-	const dispatcher = connection.play(youtube);
+	const stream = ytdl(args[0], { filter: 'audioonly' });
+	const dispatcher = connection.play(stream);
 	message.channel.send(`Musique ajoutée: ${info.title}`);
 
 	dispatcher.on('end', () => voiceChannel.leave());
