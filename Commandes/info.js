@@ -23,7 +23,7 @@ module.exports.run = async(client, message, args) => {
                 },
                 {
                     name: '⚙ __Version du Bot__',
-                    value: '1.0'
+                    value: '1.1'
                 },
                 {
                     name: '🏳__Langues Disponibles__',
@@ -43,7 +43,7 @@ module.exports.run = async(client, message, args) => {
                 },
                 {
                     name: '🔄 __Developpement__',
-                    value: 'Prochaine fonctionnalité de __**Tesla BOT**__: **__A venir__**'
+                    value: 'Prochaine fonctionnalité de __**Tesla BOT**__: **__Système de musique__**'
                 },
             ],
             footer: {
