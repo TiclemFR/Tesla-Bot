@@ -24,6 +24,7 @@
     "node-superfetch": "^0.1.10",
     "opusscript": "0.0.7",
     "parse-cache-control": "^1.0.1",
+    "prism-media": "^1.2.2",
     "progress": "^2.0.3",
     "readable-stream": "^3.6.0",
     "safe-buffer": "^5.2.1",
