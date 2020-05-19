@@ -16,7 +16,7 @@ module.exports.run = (client, message, args) => {
             .then(() => message.channel.send('<@' + member.id + '>' +' n\'à désormais plus le role ' + role.toString()))
             .catch(console.error);
 };
-console.log(`${role} a été retiré à ${member}`);
+console.log(`${role.toString()} a été retiré à ${member}`);
 module.exports.help = {
     name: 'delrole'
 };
