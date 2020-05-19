@@ -30,7 +30,7 @@ module.exports.run = async (bot, message, args) => {
     message.guild.member(bUser).ban(bReason);
     message.channel.send(banEmbed);
 }
-
+console.log(`${bUser} a été banni à ${moment.utc(message.createdAt).format('LLL')}`);
 module.exports.help = {
   name:"ban"
 }

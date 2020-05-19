@@ -52,7 +52,7 @@ module.exports.run = async(client, message, args) => {
         }
     })
 };
-
+console.log('Envoie des l\'infos');
 
 module.exports.help = {
     name: "info"

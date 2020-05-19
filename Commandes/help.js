@@ -35,6 +35,7 @@ module.exports.run = async(client, message, args) => {
 
 
 message.channel.send(EmbedHelp);
+console.log('Invocation de l\'aide');
 };
 
 module.exports.help = {
