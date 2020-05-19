@@ -18,10 +18,11 @@ module.exports.run = async(client, message, args) => {
     message.channel.bulkDelete(args[0]);
 
     message.channel.send(`✅ ${args[0]} messages ont été supprimés ! `);
+    console.log(`${args[0]} message viennent d\'être supprimés par ${message.author}`);
     setTimeout(function(){message.channel.bulkDelete(1);}, 3000);
 
 };
-console.log(`${args[0]} message viennent d\'être supprimés par ${message.author}`);
+
 module.exports.help = {
     name: 'clear'
 }
