@@ -16,7 +16,7 @@ module.exports.run = async(client, message, args) => {
             .then(() => message.channel.send('<@' + member.id + '>' +' à désormais le role ' + role.toString()))
             .catch(console.error);
 };
-console.log(`${role.toString()} a été donné à ${member}`);
+console.log(`${role.name} a été donné à ${member}`);
 module.exports.help = {
     name: 'addrole'
 };
