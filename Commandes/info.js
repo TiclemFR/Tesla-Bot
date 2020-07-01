@@ -39,7 +39,7 @@ module.exports.run = async(client, message, args) => {
                 },
                 {
                     name: '🌐 __Website__',
-                    value: 'https://thetesla.voxan24.me/'
+                    value: 'http://thetesla.my-heberg.fr/'
                 },
                 {
                     name: '🔄 __Developpement__',
