@@ -1,10 +1,13 @@
 // A cache that expires.
 module.exports = class Cache extends Map {
-  constructor() {
+  constructor(timeout = 1000) {
     super();
-    this.timeout = 1000;
+    this.timeout = timeout;
   }
   set(key, value) {
+    if (this.has(key)) {
+      clearTimeout(super.get(key).tid);
+    }
     super.set(key, {
       tid: setTimeout(this.delete.bind(this, key), this.timeout),
       value,
@@ -16,6 +19,15 @@ module.exports = class Cache extends Map {
       return entry.value;
     }
     return null;
+  }
+  getOrSet(key, fn) {
+    if (this.has(key)) {
+      return this.get(key);
+    } else {
+      let value = fn();
+      this.set(key, value);
+      return value;
+    }
   }
   delete(key) {
     let entry = super.get(key);
