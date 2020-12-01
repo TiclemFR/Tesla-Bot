@@ -6,5 +6,5 @@ module.exports = async(client, message) => {
         if (message.content === 'ça va') {
             message.channel.send('ok');
             }
-    )}
+        })
 };
