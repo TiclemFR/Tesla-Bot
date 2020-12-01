@@ -27,8 +27,6 @@ module.exports.run = async(client, message, args) => {
         {name: '🔞 __**NSFW**__', value: 'Commandes NSFW'},
         {name: '**>** neko | nekolewd', value: 'Donne des images aléatoire NSFW, 🔞'},
         {name: '\u200B', value: '\u200B'}, //BlankField
-        {name: '🎵 __**Musique**__', value: 'Commandes de musique'},
-        {name: '**>** stop', value: 'Arrête la musique'},
         )
     .setTimestamp()
     .setFooter('Plus de commandes à venir | Demandé par ' + membre.username);
