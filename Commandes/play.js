@@ -1,6 +1,6 @@
 const discord = require('discord.js');
 const ytdl = require('ytdl-core');
-require("./utils");
+const util = require('../modules/Util');
 
 module.exports.run = async(Client, message, args, ops) => {
     //Verif
