@@ -6,6 +6,27 @@ client.login(process.env.token);
 
 client.commands = new Discord.Collection();
 
+//mod message
+var tab=['fdp','connard','enculé','enculer','connar','conar','connar',
+        'connnard','fils de pute', 'pute','va te faire foutre','sa va', 'nique tes mort',
+        'nique t\'es mort','nique tes morts', 'nique t\'es morts', 'ta gueule', 'tageule',
+        'tagueule', 'ta geule', 'va te faire', 'nique toi', 'nique ta mere', 'nique ta mère',];
+
+client.on('message', message => {
+    var msg = message.content.toLowerCase();
+    if (message.channel.send) {
+        for(i=0; i<tab.length; i++){
+            if(msg.includes(tab[i])){
+                message.delete();
+                message.channel.send('<@' + message.author + '>' + ' Merci de ne pas insulter');
+                break;
+            }
+            
+        }
+    }
+});
+
+
 
 fs.readdir('./Commandes/', (error, f) => {
     if(error) console.error(error);
