@@ -33,6 +33,7 @@
     "string_decoder": "^1.3.0",
     "typedarray": "0.0.6",
     "update-node": "^0.1.0",
+    "util": "^0.12.3",
     "util-deprecate": "^1.0.2",
     "ytdl-core": "^4.1.1"
   }
