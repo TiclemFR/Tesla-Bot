@@ -3,6 +3,8 @@ const TAB = 30;
 
 module.exports = async(client, message) => {
     let member = message.author;
-    var message = message.content;
-    message.channel.send(message[0]);
+    var msg = message.content;
+    if(msg =='bonjour'){
+        message.channel.send('ok');
+    }
 };
