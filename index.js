@@ -1,10 +1,14 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
+const moment = require('moment');
 
-client.login(process.env.token);
+
+//client.login(process.env.token);
+client.login('NTkwMjEyNDAxNjUyMTcwODQz.XSdRIA.bTJC6osyDesiN808v3HtbXeCl20');
 
 client.commands = new Discord.Collection();
+let filter = m => !message.author.client;
 
 //mod message
 var tab=['fdp','connard','enculé','enculer','connar','conar','connar',
@@ -13,12 +17,28 @@ var tab=['fdp','connard','enculé','enculer','connar','conar','connar',
         'tagueule', 'ta geule', 'va te faire', 'nique toi', 'nique ta mere', 'nique ta mère',];
 
 client.on('message', message => {
+    var member = message.author;
     var msg = message.content.toLowerCase();
     if (message.channel.send) {
         for(i=0; i<tab.length; i++){
             if(msg.includes(tab[i])){
                 message.delete();
                 message.channel.send('<@' + message.author + '>' + ' Merci de ne pas insulter');
+                if(!message.guild.channels.cache.find(channel => channel.name == 'report')){
+                    message.guild.channels.cache.find(channel => channel.name == 'report');
+                    message.channel.send('❌ Le channel \"report\" n\'est pas détécté');
+                    message.guild.channels.create('report', {type : 'text'});
+                    message.channel.send('✅ Je viens de créer le channel. Je vous laisse le placer comme bon vous semble.');
+                }
+                let warnEmbed = new Discord.MessageEmbed()
+                .setDescription("~Warn~")
+                .setColor("#e68e34")
+                .addFields(
+                        {name: 'Warn User', value: `${member} with ID ${member.id}`},
+                        {name: 'Time', value: moment.utc(message.createdAt).format('LLL')},
+                        {name: 'Reason', value: '**Message:** ' + msg + ' **Cause:** ' + tab[i]},
+                    );
+                message.guild.channels.cache.find(channel => channel.name == 'report').send(warnEmbed);
                 break;
             }
             
