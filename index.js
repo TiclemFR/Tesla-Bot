@@ -4,8 +4,7 @@ const fs = require('fs');
 const moment = require('moment');
 
 
-//client.login(process.env.token);
-client.login('NTkwMjEyNDAxNjUyMTcwODQz.XSdRIA.bTJC6osyDesiN808v3HtbXeCl20');
+client.login(process.env.token);
 
 client.commands = new Discord.Collection();
 let filter = m => !message.author.client;
