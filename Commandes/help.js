@@ -23,6 +23,7 @@ module.exports.run = async(client, message, args) => {
         {name: '**>** ban [@user] [reason]', value: 'Ban un utilisateur'},
         {name: '**>** addrole [@user] [role]', value: 'Ajoute le rôle à un utilisateur'},
         {name: '**>** delrole [@user] [role]', value: 'Retire le rôle à un utilisateur'},
+        {name: '**>** warn [@user] [reason]', value: 'Warn un utilisateur et retourne un logs dans le channel report (crée auto si non disponible)'},
         {name: '\u200B', value: '\u200B'}, //BlankField
         {name: '🔞 __**NSFW**__', value: 'Commandes NSFW'},
         {name: '**>** neko | nekolewd', value: 'Donne des images aléatoire NSFW, 🔞'},
