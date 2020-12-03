@@ -31,6 +31,9 @@ module.exports.run = async(client, message, args) => {
         {name: '🔞 __**NSFW**__', value: 'Commandes NSFW'},
         {name: '**>** neko | nekolewd', value: 'Donne des images aléatoire NSFW, 🔞'},
         {name: '\u200B', value: '\u200B'}, //BlankField
+        {name: '🎮 __**Jeux**__', value: 'Commandes de Jeux'},
+        {name: '**>** rps [pierre | feuille | ciseaux]', value: 'Jouer à pierre, feuille, ciseaux'},
+        {name: '\u200B', value: '\u200B'}, //BlankField
         )
     .setTimestamp()
     .setFooter('Plus de commandes à venir | Demandé par ' + membre.username);
