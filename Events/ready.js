@@ -1,5 +1,4 @@
 module.exports = async(client) => {
 
-    client.user.setActivity("use : t!help || Traverse le sytème solaire 🚀", { type: "PLAYING"});
-    client.user.setPresence({status : 'online'});
+    client.user.setActivity("Aide: t!help || Traverse le sytème solaire 🚀", { type: "PLAYING"});
 };
