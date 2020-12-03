@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args) => {
         );
 
     message.guild.member(kUser).kick(kReason);
-    message.channel.send(kickEmbed);
+    message.guild.channels.cache.find(channel => channel.name == 'report').send(kickEmbed);
     console.log(`${kUser} à été explusé à ${moment.utc(message.createdAt).format('LLL')}`);
 }
 

@@ -19,12 +19,13 @@ module.exports.run = async(client, message, args) => {
         {name: '**>** problemes', value: 'Liste tous les problèmes de **Tesla Bot**'},
         {name: '\u200B', value: '\u200B'}, //BlankField
         {name: '🛠️ Modération', value: 'Commandes de modération'},
+        {name: '🔧 Logs', value: 'Les commandes de modération nécessite un channel "report", si il n\'est pas crée le bot le fera lui même et vous pourez le déplacer à votre guise'},
         {name: '**>** kick [@user] [reason]', value: 'Kick un utilisateur'},
         {name: '**>** ban [@user] [reason]', value: 'Ban un utilisateur'},
         {name: '**>** addrole [@user] [role]', value: 'Ajoute le rôle à un utilisateur'},
         {name: '**>** delrole [@user] [role]', value: 'Retire le rôle à un utilisateur'},
-        {name: '**>** warn [@user] [reason]', value: 'Warn un utilisateur et retourne un logs dans le channel report (crée auto si non disponible)'},
-        {name: '**>** mute [@user] [reason]', value: 'Mute un utilisateur et retourne un logs dans le channel report (crée auto si non disponible)'},
+        {name: '**>** warn [@user] [reason]', value: 'Warn un utilisateur'},
+        {name: '**>** mute [@user] [reason]', value: 'Mute un utilisateur'},
         {name: '**>** unmute [@user]', value: 'Unmute un utilisateur'},
         {name: '\u200B', value: '\u200B'}, //BlankField
         {name: '🔞 __**NSFW**__', value: 'Commandes NSFW'},
