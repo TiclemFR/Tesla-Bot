@@ -1,6 +1,12 @@
 const Discord = require("discord.js");
 
 module.exports.run = (client, message, args) => {
+    if(!message.guild.channels.cache.find(channel => channel.name == 'report')){
+        message.guild.channels.cache.find(channel => channel.name == 'report');
+        message.channel.send('❌ Le channel \"report\" n\'est pas détécté');
+        message.guild.channels.create('report', {type : 'text'});
+        message.channel.send('✅ Je viens de créer le channel. Je vous laisse le placer comme bon vous semble.');
+    }
     if (!args.join(' ')) { return message.channel.send('Vous n\'avez pas la spécifié un nom de role !'); }
     if (!message.guild.member(message.author.id).hasPermission('MANAGE_ROLES')) { return message.channel.send('Vous n\'avez pas la permission `gérer les roles` !'); }
     if (!message.guild.member(client.user.id).hasPermission('MANAGE_ROLES')) { return message.channel.send('Je n\'ai pas la permission `gérer les roles` !'); }
