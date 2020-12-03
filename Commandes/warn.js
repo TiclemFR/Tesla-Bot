@@ -25,8 +25,8 @@ module.exports.run = async(client, message, args) => {
     .setDescription("~Warn~")
     .setColor("#e68e34")
     .addFields(
-            {name: 'Warn User', value: `${wUser} with ID ${wUser.id}`},
-            {name: 'Warn By', value: `<@${message.author.id}> with ID ${message.author.id}`},
+            {name: 'Warned User', value: `${wUser} with ID ${wUser.id}`},
+            {name: 'Warned By', value: `<@${message.author.id}> with ID ${message.author.id}`},
             {name: 'Time', value: moment.utc(message.createdAt).format('LLL')},
             {name: 'Reason', value: wReason},
         );

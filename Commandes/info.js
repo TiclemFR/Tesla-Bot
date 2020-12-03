@@ -43,7 +43,7 @@ module.exports.run = async(client, message, args) => {
                 },
                 {
                     name: '🔄 __Developpement__',
-                    value: 'Prochaine fonctionnalité de __**Tesla BOT**__: **__Commande Mute__**'
+                    value: 'Prochaine fonctionnalité de __**Tesla BOT**__: **__....__**'
                 },
             ],
             footer: {
