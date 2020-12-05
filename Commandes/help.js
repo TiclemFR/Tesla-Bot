@@ -19,7 +19,7 @@ module.exports.run = async(client, message, args) => {
         {name: '**>** problemes', value: 'Liste tous les problèmes de **Tesla Bot**'},
         {name: '\u200B', value: '\u200B'}, //BlankField
         {name: '🛠️ Modération', value: 'Commandes de modération'},
-        {name: '🔧 Logs', value: 'Les commandes de modération nécessite un channel "report", si il n\'est pas crée le bot le fera lui même et vous pourez le déplacer à votre guise'},
+        {name: '🔧 Logs', value: 'Les commandes de modération nécessite un channel "report", si il n\'est pas crée, le bot le fera lui même et vous pourez le déplacer à votre guise'},
         {name: '**>** kick [@user] [reason]', value: 'Kick un utilisateur'},
         {name: '**>** ban [@user] [reason]', value: 'Ban un utilisateur'},
         {name: '**>** addrole [@user] [role]', value: 'Ajoute le rôle à un utilisateur'},
