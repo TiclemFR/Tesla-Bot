@@ -19,7 +19,7 @@ module.exports.run = async(client, message, args) => {
     if (member.roles.cache.has(role.id)) { return message.channel.send('Ce membre a déjà ce role !'); }
     
         member.roles.add(role.id);
-        message.channel.reaction('✅');
+        message.react('✅');
         message.guild.channels.cache.find(channel => channel.name == 'report').send('<@' + member.id + '>' +' à désormais le role ' + role.toString());
 };
 module.exports.help = {
