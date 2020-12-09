@@ -18,9 +18,9 @@ module.exports.run = async(client, message, args) => {
     if (!role) { return message.channel.send('Ce role n\'existe pas !'); }
     if (member.roles.cache.has(role.id)) { return message.channel.send('Ce membre a déjà ce role !'); }
     
-        member.roles.add(role.id)
-            .then(() =>  message.guild.channels.cache.find(channel => channel.name == 'report').send('<@' + member.id + '>' +' à désormais le role ' + role.toString()))
-            .catch(console.error);
+        member.roles.add(role.id);
+        message.channel.reaction('✅');
+        message.guild.channels.cache.find(channel => channel.name == 'report').send('<@' + member.id + '>' +' à désormais le role ' + role.toString());
 };
 module.exports.help = {
     name: 'addrole'
