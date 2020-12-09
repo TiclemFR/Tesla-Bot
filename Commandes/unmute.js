@@ -41,6 +41,7 @@ module.exports.run = async(client, message, args) => {
     }
     else{
         mUser.roles.remove(role.id);
+        message.react('✅');
         message.guild.channels.cache.find(channel => channel.name == 'report').send(muteEmbed);
     }
    

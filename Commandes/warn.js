@@ -30,6 +30,7 @@ module.exports.run = async(client, message, args) => {
             {name: 'Time', value: moment.utc(message.createdAt).format('LLL')},
             {name: 'Reason', value: wReason},
         );
+    message.react('✅');
     message.guild.channels.cache.find(channel => channel.name == 'report').send(warnEmbed);
    
 };

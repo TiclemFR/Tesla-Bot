@@ -18,9 +18,9 @@ module.exports.run = (client, message, args) => {
     if (!role) { return message.channel.send('Ce role n\'existe pas !'); }
     if (!member.roles.cache.has(role.id)) { return message.channel.send('Ce membre n\'a pas ce role !'); }
     
-        member.roles.remove(role.id)
-            .then(() =>  message.guild.channels.cache.find(channel => channel.name == 'report').send('<@' + member.id + '>' +' n\'à désormais plus le role ' + role.toString()))
-            .catch(console.error);
+        member.roles.remove(role.id);
+        message.react('✅');
+        message.guild.channels.cache.find(channel => channel.name == 'report').send('<@' + member.id + '>' +' n\'à désormais plus le role ' + role.toString());
 };
 module.exports.help = {
     name: 'delrole'
