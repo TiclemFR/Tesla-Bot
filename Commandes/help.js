@@ -13,10 +13,8 @@ module.exports.run = async(client, message, args) => {
         {name: '**>** help', value: 'Affiche les commandes'},
         {name: '**>** ping', value: 'Affiche la latence du bot'},
         {name: '**>** stats [@user]', value: 'Affiche les stats d\'un utilisateur'},
-        {name: '**>** site', value: 'Donne le lien vers le site de The Tesla'},
         {name: '**>** info', value: 'Donne des informations sur le bot'},
         {name: '**>** serverinfo', value: 'Donnes des information sur le serveur'},
-        {name: '**>** problemes', value: 'Liste tous les problèmes de **Tesla Bot**'},
         {name: '\u200B', value: '\u200B'}, //BlankField
         {name: '🛠️ Modération', value: 'Commandes de modération'},
         {name: '🔧 Logs', value: 'Les commandes de modération nécessite un channel "report", si il n\'est pas crée, le bot le fera lui même et vous pourez le déplacer à votre guise'},
