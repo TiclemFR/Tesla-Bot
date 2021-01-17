@@ -22,6 +22,7 @@
     "inherits": "^2.0.4",
     "moment": "^2.25.3",
     "ms": "^2.1.2",
+    "mysql": "^2.18.1",
     "node-pre-gyp": "^0.14.0",
     "node-superfetch": "^0.1.10",
     "opusscript": "0.0.7",
