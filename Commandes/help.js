@@ -9,12 +9,14 @@ module.exports.run = async(client, message, args) => {
     .setColor('#136ee2')
     .setTitle('Liste des commandes disponible')
     .addFields(
+        {name:'💰 Argent' , value: 'Chaque message vous fait gagner un peu d\'argent'},
         {name:'⚙️ __**Général**__' , value: 'Commandes principales'},
         {name: '**>** help', value: 'Affiche les commandes'},
         {name: '**>** ping', value: 'Affiche la latence du bot'},
         {name: '**>** stats [@user]', value: 'Affiche les stats d\'un utilisateur'},
         {name: '**>** info', value: 'Donne des informations sur le bot'},
         {name: '**>** serverinfo', value: 'Donnes des information sur le serveur'},
+        {name: '**>** money', value: 'Affiche votre argent actuel'},
         {name: '\u200B', value: '\u200B'}, //BlankField
         {name: '🛠️ Modération', value: 'Commandes de modération'},
         {name: '🔧 Logs', value: 'Les commandes de modération nécessite un channel "report", si il n\'est pas crée, le bot le fera lui même et vous pourez le déplacer à votre guise'},

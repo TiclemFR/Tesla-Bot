@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 const moment = require('moment');
+const mysql  =require('mysql');
 
 
 client.login(process.env.token);
@@ -9,7 +10,6 @@ client.login(process.env.token);
 client.commands = new Discord.Collection();
 let filter = m => !message.author.client;
 
-//mod message
 var tab=['fdp','connard','enculé','enculer','connar','conar','connar',
         'connnard','fils de pute', 'pute','va te faire foutre','sa va', 'nique tes mort',
         'nique t\'es mort','nique tes morts', 'nique t\'es morts', 'ta gueule', 'tageule',
@@ -19,6 +19,7 @@ client.on('message', message => {
     var member = message.author;
     var msg = message.content.toLowerCase();
     if (message.channel.send) {
+        //Filtrage des massages
         for(i=0; i<tab.length; i++){
             if(msg.includes(tab[i])){
                 message.delete();
@@ -42,7 +43,66 @@ client.on('message', message => {
             }
             
         }
+        //mise à jour des gold par message
+        const membre = message.author.username;
+        const membre_id = message.author.id;
+
+        const db = mysql.createConnection({
+
+            host: process.env.host,
+        
+            user: process.env.user,
+        
+            password: process.env.pass,
+
+            database: process.env.database
+        
+        });
+        // en cas de déconnexion
+        db.on('error', err => {
+            if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+                db.connect();
+            } else {
+                throw err;
+            }
+        });
+        db.connect(function(err) {
+
+            if (err) throw err;
+        
+            console.log("Connecté réussi à la base de données");
+     
+        });
+        //on vérifie si l'utilisateur est déjà dans la base
+        db.query(`SELECT id_discord FROM user_discord WHERE id_discord = '${membre_id}'`,function(err,result){
+            if(err) throw err;
+            
+            if(result.length == 0){
+                //si il n'éxiste pas on l'insère dans la base
+                db.query(`INSERT INTO user_discord (name, id_discord, gold) VALUE ('${membre}', '${membre_id}', '0')`, function (err, result) {
+
+                    if (err) throw err;
+                    console.log(`Utilisateur ${membre} ajouté à la base de données`);
+                });
+            }
+            else{
+                //sinon on met à jour ses golds
+                db.query(`SELECT gold FROM user_discord WHERE id_discord = '${membre_id}'`, function(err,result){
+                    if(err) throw err;
+                    var ajout = 5;
+                    var gold = result[0].gold + ajout;
+                    db.query(`UPDATE user_discord SET gold =  '${gold}' WHERE id_discord = '${membre_id}'`, function(err,result){
+                        if(err) throw err;
+                        console.log(`L'utilisateur ${membre} viens de gagner ${ajout} gold`);
+                    });
+                });
+                
+            }
+            
+        });
+        db.commit();
     }
+   
 });
 
 

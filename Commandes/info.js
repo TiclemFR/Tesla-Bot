@@ -23,7 +23,7 @@ module.exports.run = async(client, message, args) => {
                 },
                 {
                     name: '⚙ __Version du Bot__',
-                    value: '1.1'
+                    value: '1.8.0'
                 },
                 {
                     name: '🏳__Langues Disponibles__',
@@ -35,7 +35,7 @@ module.exports.run = async(client, message, args) => {
                 },
                 {
                     name: '🗒️ __Émojis Utilisés__',
-                    value: '❌: Erreur/Action impossible | ✅: Action réalisé | ⚠: Problème détecté/Avertissement | 🔞: Contenus Adulte'
+                    value: '❌: Erreur | ✅: Action réalisé | ⚠: Avertissement | 🔞: Contenus Adulte'
                 },
                 {
                     name: '🌐 __Website__',
@@ -43,7 +43,7 @@ module.exports.run = async(client, message, args) => {
                 },
                 {
                     name: '🔄 __Developpement__',
-                    value: 'Prochaine fonctionnalité de __**Tesla BOT**__: **__....__**'
+                    value: 'Prochaine fonctionnalité de __**Tesla BOT**__: **__Fonctionnalité utilisant l\'argent__**'
                 },
             ],
             footer: {
