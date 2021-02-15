@@ -9,9 +9,9 @@ module.exports.run = async(client, message, args) => {
     const db = mysql.createConnection({
 
         host: process.env.host,
-     
+        
         user: process.env.user,
-     
+    
         password: process.env.pass,
 
         database: process.env.database
@@ -29,7 +29,7 @@ module.exports.run = async(client, message, args) => {
 
         if (err) throw err;
      
-        console.log("Connecté à la base de données");
+        console.log(`Demande de vérification du compte de ${membre}`);
      
       });
       db.query(`SELECT gold FROM user_discord WHERE id_discord = '${membre_id}'`, function (err, result) {

@@ -70,7 +70,7 @@ client.on('message', message => {
 
             if (err) throw err;
         
-            console.log("Connecté réussi à la base de données");
+            console.log(`Mise à jour du compte de ${membre}`);
      
         });
         //on vérifie si l'utilisateur est déjà dans la base
@@ -104,8 +104,6 @@ client.on('message', message => {
     }
    
 });
-
-
 
 fs.readdir('./Commandes/', (error, f) => {
     if(error) console.error(error);

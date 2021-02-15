@@ -5,9 +5,9 @@ module.exports.run = async(client, message, args) => {
 
     const membre = message.author;
     
-    const EmbedHelp = new Discord.MessageEmbed()
+    const EmbedHelp1 = new Discord.MessageEmbed()
     .setColor('#136ee2')
-    .setTitle('Liste des commandes disponible')
+    .setTitle('Liste des commandes disponible 1/2')
     .addFields(
         {name:'💰 Argent' , value: 'Chaque message vous fait gagner un peu d\'argent'},
         {name:'⚙️ __**Général**__' , value: 'Commandes principales'},
@@ -31,15 +31,27 @@ module.exports.run = async(client, message, args) => {
         {name: '🔞 __**NSFW**__', value: 'Commandes NSFW'},
         {name: '**>** neko | nekolewd', value: 'Donne des images aléatoire NSFW, 🔞'},
         {name: '\u200B', value: '\u200B'}, //BlankField
+        )
+    .setTimestamp()
+    .setFooter('Page 1/2 | Demandé par ' + membre.username);
+
+    const EmbedHelp2 = new Discord.MessageEmbed()
+    .setColor('#136ee2')
+    .setTitle('Liste des commandes disponible 2/2')
+    .addFields(
         {name: '🎮 __**Jeux**__', value: 'Commandes de Jeux'},
         {name: '**>** rps [pierre | feuille | ciseaux]', value: 'Jouer à pierre, feuille, ciseaux'},
         {name: '\u200B', value: '\u200B'}, //BlankField
+        {name: '📝 __**Services**__', value: 'Commandes pour acheter des services, utilisera l\'argent gagné'},
+        {name: '**>** vadd', value: 'Ajoute un salon vocal à votre nom et vous attributs les permissions | 20 💰'},
+        {name: '\u200B', value: '\u200B'}, //BlankField
         )
     .setTimestamp()
-    .setFooter('Plus de commandes à venir | Demandé par ' + membre.username);
+    .setFooter('Page 2/2 | Demandé par ' + membre.username);
 
 
-message.channel.send(EmbedHelp);
+message.channel.send(EmbedHelp1);
+message.channel.send(EmbedHelp2);
 console.log('Invocation de l\'aide');
 };
 
