@@ -1,15 +1,13 @@
 const Discord = require('discord.js');
 const moment = require('moment');
+const errors = require("../modules/errors.js");
 
 module.exports.run = async(client, message, args) => {
     if(!message.member.hasPermission("MUTE_MEMBER")){
-        message.channel.send('❌ vous n\'avez pas les permissions pour mute un utilisateur');
+        return errors.noPerms(message,"MUTE_MEMBER");
     }
     if(!message.guild.channels.cache.find(channel => channel.name == 'report')){
-        message.guild.channels.cache.find(channel => channel.name == 'report');
-        message.channel.send('❌ Le channel \"report\" n\'est pas détécté');
-        message.guild.channels.create('report', {type : 'text'});
-        message.channel.send('✅ Je viens de créer le channel. Je vous laisse le placer comme bon vous semble.');
+        return errors.noReport(message.channel, message);
     }
     if(!message.guild.roles.cache.find(role => role.name == 'mute')){
         message.channel.send('❌ Le role "mute" n\'existe pas');
@@ -25,11 +23,11 @@ module.exports.run = async(client, message, args) => {
     let role = message.guild.roles.cache.find(role => role.name == 'mute');
     let mUser = message.guild.member(message.mentions.users.first());
     if(!mUser){
-        message.channel.send('❌ Vous devez mentionner un utilisateur');
+        return errors.cantfindUser(message.channel);
     }
     let mReason = args.join(" ").slice(22);
     if(!mReason){
-        message.channel.send('❌ Vous devez indiquer la raison du mute');
+        return errors.noReason(message.channel);
     }
 
     let muteEmbed = new Discord.MessageEmbed()

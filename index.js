@@ -2,7 +2,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 const moment = require('moment');
-const mysql  =require('mysql');
+const mysql  = require('mysql');
+const db = require('./modules/connect');
+const errors = require("./modules/errors.js");
 
 
 client.login(process.env.token);
@@ -16,19 +18,17 @@ var tab=['fdp','connard','enculé','enculer','connar','conar','connar',
         'tagueule', 'ta geule', 'va te faire', 'nique toi', 'nique ta mere', 'nique ta mère',];
 
 client.on('message', message => {
+
     var member = message.author;
     var msg = message.content.toLowerCase();
     if (message.channel.send) {
-        //Filtrage des massages
+        //Filtrage des messages
         for(i=0; i<tab.length; i++){
             if(msg.includes(tab[i])){
                 message.delete();
                 message.channel.send('<@' + message.author + '>' + ' Merci de ne pas insulter');
                 if(!message.guild.channels.cache.find(channel => channel.name == 'report')){
-                    message.guild.channels.cache.find(channel => channel.name == 'report');
-                    message.channel.send('❌ Le channel \"report\" n\'est pas détécté');
-                    message.guild.channels.create('report', {type : 'text'});
-                    message.channel.send('✅ Je viens de créer le channel. Je vous laisse le placer comme bon vous semble.');
+                    return errors.noReport(message.channel, message);
                 }
                 let warnEmbed = new Discord.MessageEmbed()
                 .setDescription("~Warn~")
@@ -47,32 +47,6 @@ client.on('message', message => {
         const membre = message.author.username;
         const membre_id = message.author.id;
 
-        const db = mysql.createConnection({
-
-            host: process.env.host,
-        
-            user: process.env.user,
-        
-            password: process.env.pass,
-
-            database: process.env.database
-        
-        });
-        // en cas de déconnexion
-        db.on('error', err => {
-            if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-                db.connect();
-            } else {
-                throw err;
-            }
-        });
-        db.connect(function(err) {
-
-            if (err) throw err;
-        
-            console.log(`Mise à jour du compte de ${membre}`);
-     
-        });
         //on vérifie si l'utilisateur est déjà dans la base
         db.query(`SELECT id_discord FROM user_discord WHERE id_discord = '${membre_id}'`,function(err,result){
             if(err) throw err;
@@ -100,7 +74,6 @@ client.on('message', message => {
             }
             
         });
-        db.commit();
     }
    
 });

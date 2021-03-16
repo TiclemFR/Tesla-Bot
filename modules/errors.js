@@ -7,7 +7,7 @@ module.exports.noPerms = (message, perm) => {
         .setAuthor(message.author.username)
         .setTitle("Permission insuffisante")
         .setColor(config.red)
-        .addField("Permission requise:", perm);
+        .addField("❌ Permission requise:", perm);
 
     message.channel.send(embed);
 }
@@ -18,7 +18,7 @@ module.exports.equalPerms = (message, user, perms) => {
         .setAuthor(message.author.username)
         .setColor(config.red)
         .setTitle("Erreur")
-        .addField(`${user} à les mêmes permissions`, perms);
+        .addField(`❌ ${user} à les mêmes permissions`, perms);
 
     message.channel.send(embed);
 
@@ -27,7 +27,7 @@ module.exports.equalPerms = (message, user, perms) => {
 module.exports.botuser = (message) => {
     let embed = new Discord.MessageEmbed()
         .setTitle("Erreur")
-        .setDescription("Vous ne pouvez pas ban un bot.")
+        .setDescription("❌ Vous ne pouvez pas ban un bot.")
         .setColor(config.red);
 
     message.channel.send(embed);
@@ -36,7 +36,7 @@ module.exports.botuser = (message) => {
 module.exports.cantfindUser = (channel) => {
     let embed = new Discord.MessageEmbed()
         .setTitle("Erreur")
-        .setDescription("Impossible de trouver l'utilisateur.")
+        .setDescription("❌ Impossible de trouver l'utilisateur.")
         .setColor(config.red);
 
     channel.send(embed);
@@ -45,8 +45,25 @@ module.exports.cantfindUser = (channel) => {
 module.exports.noReason = (channel) => {
     let embed = new Discord.MessageEmbed()
         .setTitle("Erreur")
-        .setDescription("Veuillez indiquer une raison.")
+        .setDescription("❌ Veuillez indiquer une raison.")
         .setColor(config.red);
 
     channel.send(embed);
+}
+
+module.exports.noReport = (channel, message) => {
+    let embed1 = new Discord.MessageEmbed()
+        .setTitle("Erreur")
+        .setDescription("❌ Le channel \"report\" n\'est pas détécté")
+        .setColor(config.red);
+
+    channel.send(embed1);
+    
+    let embed2 = new Discord.MessageEmbed()
+        .setTitle("Résolu")
+        .setDescription("✅ Je viens de créer le channel. Je vous laisse le placer comme bon vous semble.")
+        .setColor(config.green);
+
+    message.guild.channels.create('report', { type: 'text' });
+    channel.send(embed2)
 }

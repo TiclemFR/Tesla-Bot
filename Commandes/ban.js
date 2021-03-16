@@ -4,10 +4,7 @@ const moment = require('moment');
 
 module.exports.run = async (bot, message, args) => {
   if(!message.guild.channels.cache.find(channel => channel.name == 'report')){
-    message.guild.channels.cache.find(channel => channel.name == 'report');
-    message.channel.send('❌ Le channel \"report\" n\'est pas détécté');
-    message.guild.channels.create('report', {type : 'text'});
-    message.channel.send('✅ Je viens de créer le channel. Je vous laisse le placer comme bon vous semble.');
+    return errors.noReport(message.channel, message);
 }
 
     if(!message.member.hasPermission("BAN_MEMBERS")) return errors.noPerms(message, "BAN_MEMBERS");

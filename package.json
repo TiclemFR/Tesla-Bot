@@ -4,7 +4,7 @@
   "description": "Deuxième bot discord suite à la mort du premier",
   "main": "index.js",
   "engines": {
-    "node": "12.16.3"
+    "node": "15.9.0"
   },
   "script": {},
   "author": "TiclemFR",

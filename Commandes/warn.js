@@ -1,24 +1,22 @@
 const Discord = require('discord.js');
 const moment = require('moment');
+const errors = require("../modules/errors.js");
 
 module.exports.run = async(client, message, args) => {
     if(!message.member.hasPermission("MUTE_MEMBER")){
-        message.channel.send('❌ vous n\'avez pas les permissions pour warn un utilisateur');
+        return errors.noPerms(message, "MUTE_MEMBER");
     }
     if(!message.guild.channels.cache.find(channel => channel.name == 'report')){
-        message.guild.channels.cache.find(channel => channel.name == 'report');
-        message.channel.send('❌ Le channel \"report\" n\'est pas détécté');
-        message.guild.channels.create('report', {type : 'text'});
-        message.channel.send('✅ Je viens de créer le channel. Je vous laisse le placer comme bon vous semble.');
+        return errors.noReport(message.channel, message);
     }
 
     let wUser = message.guild.member(message.mentions.users.first());
     if(!wUser){
-        message.channel.send('❌ Vous devez mentionner un utilisateur');
+        return errors.cantfindUser(message.channel);
     }
     let wReason = args.join(" ").slice(22);
     if(!wReason){
-        message.channel.send('❌ Vous devez indiquer la raison du warn');
+        return errors.noReason(message.channel);
     }
 
     let warnEmbed = new Discord.MessageEmbed()
