@@ -4,8 +4,9 @@ module.exports = async(client) => {
     }
 
     setInterval(function(){
-        var tab = ['Aide: t!help || Traverse le sytème solaire 🚀', 'Aide: t!help || Cherche Baro 🕵️‍♂️','🕵️‍Aide: t!help || Admire le néant 😲']
-        client.user.setActivity(tab[getRandomInt(3)], { type: "PLAYING"});
-    }, 5000)
+        var tab = ['Aide: t!help || Traverse le sytème solaire 🚀', 'Aide: t!help || A la recherche de Baro 🕵️‍♂️',
+        '‍Aide: t!help || Investie dans le Prime 💵','Aide: t!help || Craft des trucs 🛠️']
+        client.user.setActivity(tab[getRandomInt(tab.length)], { type: "PLAYING"});
+    }, 10000)
     
 };
