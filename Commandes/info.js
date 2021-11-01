@@ -23,7 +23,7 @@ module.exports.run = async(client, message, args) => {
                 },
                 {
                     name: '⚙ __Version du Bot__',
-                    value: '2.9.10'
+                    value: '2.11.0'
                 },
                 {
                     name: '🏳__Langues Disponibles__',
@@ -43,7 +43,7 @@ module.exports.run = async(client, message, args) => {
                 },
                 {
                     name: '🔄 __Developpement__',
-                    value: 'Prochaine fonctionnalité de __**Tesla BOT**__: **__...__**'
+                    value: 'Prochaine fonctionnalité de __**Tesla BOT**__: Ajout progréssif des commandes pour Warframe'
                 },
             ],
             footer: {

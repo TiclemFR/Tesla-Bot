@@ -12,6 +12,7 @@ module.exports.run = async(client, message, args) => {
         {name:'💰 Argent' , value: 'Chaque message vous fait gagner un peu d\'argent'},
         {name:'⚙️ __**Général**__' , value: 'Commandes principales'},
         {name: '**>** help', value: 'Affiche les commandes'},
+        {name: '**>** helpWarframe', value: 'Affiche les commandes pour Warframe'},
         {name: '**>** ping', value: 'Affiche la latence du bot'},
         {name: '**>** stats [@user]', value: 'Affiche les stats d\'un utilisateur'},
         {name: '**>** info', value: 'Donne des informations sur le bot'},
