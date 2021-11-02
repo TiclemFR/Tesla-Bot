@@ -166,9 +166,31 @@ module.exports.run = async(client, message, args) => {
     }
 
    setTimeout(function(){
-    message.channel.send(embedCetus)
-    message.channel.send(embedVallis)
-    message.channel.send(embedCambion)
+       try {
+            message.channel.send(embedCetus)
+            message.channel.send(embedVallis)
+            message.channel.send(embedCambion)
+       } catch (error) {
+        message.channel.send({
+            embed: {
+                color: 0xFF0000,
+                title: 'Une erreur est survenue',
+                thumbnail: {
+                    url: "https://cdn.discordapp.com/attachments/589885773231423507/904646348459106334/sign-error-icon-10.png"
+                },
+                fields: [
+                    {
+                        name: 'Error message',
+                        value: error
+                    },
+                ],
+                footer: {
+                    text: `API DE WARFRAME`
+                }
+            }
+        })
+       }
+    
    }, 1000)
 };
 
