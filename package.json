@@ -21,7 +21,7 @@
     "https-proxy-agent": "^5.0.0",
     "inherits": "^2.0.4",
     "jquery": "^3.6.0",
-    "moment": "^2.25.3",
+    "moment": "^2.29.2",
     "ms": "^2.1.2",
     "mysql": "^2.18.1",
     "node-pre-gyp": "^0.14.0",
