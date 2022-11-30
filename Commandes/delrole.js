@@ -3,7 +3,7 @@ const errors = require("../modules/errors.js");
 
 module.exports.run = (client, message, args) => {
     if(!message.guild.channels.cache.find(channel => channel.name == 'report')){
-        return errors.noReport(message.channel, message);
+        errors.noReport(message.channel, message);
     }
     if (!args.join(' ')) { return message.channel.send('Vous n\'avez pas la spécifié un nom de role !'); }
     if (!message.guild.member(message.author.id).hasPermission('MANAGE_ROLES')) { return errors.noPerms(message,"MANAGE_ROLES"); }

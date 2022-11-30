@@ -26,6 +26,7 @@
     "mysql": "^2.18.1",
     "node-pre-gyp": "^0.14.0",
     "node-superfetch": "^0.1.10",
+    "npm": "^9.1.2",
     "openai-api": "^1.2.3",
     "opusscript": "0.0.7",
     "parse-cache-control": "^1.0.1",

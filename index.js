@@ -1,13 +1,16 @@
+require('dotenv').config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 const moment = require('moment');
 const mysql  = require('mysql');
+const { listenerCount, env } = require('process');
 const db = require('./modules/connect');
 const errors = require("./modules/errors.js");
 
 
-client.login(process.env.token);
+//client.login(process.env.token);
+client.login(process.env.TOKEN);
 
 client.commands = new Discord.Collection();
 let filter = m => !message.author.client;
@@ -28,7 +31,7 @@ client.on('message', message => {
                 message.delete();
                 message.channel.send('<@' + message.author + '>' + ' Merci de ne pas insulter');
                 if(!message.guild.channels.cache.find(channel => channel.name == 'report')){
-                    return errors.noReport(message.channel, message);
+                    errors.noReport(message.channel, message);
                 }
                 let warnEmbed = new Discord.MessageEmbed()
                 .setDescription("~Warn~")
@@ -43,7 +46,7 @@ client.on('message', message => {
             }
             
         }
-        //mise à jour des gold par message
+        /*//mise à jour des gold par message
         const membre = message.author.username;
         const membre_id = message.author.id;
 
@@ -73,7 +76,7 @@ client.on('message', message => {
                 
             }
             
-        });
+        });*/
     }
    
 });
@@ -102,5 +105,4 @@ fs.readdir('./Events/', (error, f) => {
 
         client.on(event, events.bind(null, client));
     });
-
 });

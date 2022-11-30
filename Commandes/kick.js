@@ -4,7 +4,7 @@ const moment = require('moment');
 
 module.exports.run = async (bot, message, args) => {
   if(!message.guild.channels.cache.find(channel => channel.name == 'report')){
-    return errors.noReport(message.channel, message);
+    errors.noReport(message.channel, message);
 }
 
     if(!message.member.hasPermission("KICK_MEMBERS")) return errors.noPerms(message, "KICK_MEMBERS");

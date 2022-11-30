@@ -10,6 +10,8 @@ module.exports.run = async(client, message, args) => {
     .setTitle('Liste des commandes disponible')
     .addFields(
         {name:'**>** cycle' , value: 'Indique les cycles des mondes ouvert'},
+        {name:'**>** darvo' , value: 'Donne l\'offre journalière de Darvo'},
+        {name:'**>** fissure' , value: 'Liste toutes les fissures actuellement en cours'},
         {name: '\u200B', value: '\u200B'}, //BlankField
         )
     .setTimestamp()

@@ -7,7 +7,7 @@ module.exports.run = async(client, message, args) => {
         return errors.noPerms(message,"MUTE_MEMBER");
     }
     if(!message.guild.channels.cache.find(channel => channel.name == 'report')){
-        return errors.noReport(message.channel, message);
+        errors.noReport(message.channel, message);
     }
     if(!message.guild.roles.cache.find(role => role.name == 'mute')){
         message.channel.send('❌ Le role "mute" n\'existe pas');

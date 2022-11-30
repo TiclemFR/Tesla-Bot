@@ -4,17 +4,27 @@ const mysql = require('mysql');
 
     connectionLimit: 2,
 
-    host: process.env.host,
+    /* host: process.env.host,
 
     user: process.env.user,
 
     password: process.env.pass,
 
-    database: process.env.database
+    database: process.env.database */
+
+    host: "node1.delya.eu",
+
+    user: "Ticlem_bdd",
+
+    password: "wo37oq88",
+
+    database: "Ticlem_bdd"
 });
 
-    // en cas de déconnexion
     db.on('error', err => {
         console.log(err, err.code);
     });
-module.exports = db;
+function dbConnect(){
+    db.getConnection();
+}
+module.exports = db, dbConnect;
