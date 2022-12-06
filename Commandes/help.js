@@ -29,9 +29,9 @@ module.exports.run = async(client, message, args) => {
         {name: '**>** mute [@user] [reason]', value: 'Mute un utilisateur'},
         {name: '**>** unmute [@user]', value: 'Unmute un utilisateur'},
         {name: '\u200B', value: '\u200B'}, //BlankField
-        /*{name: '🔞 __**NSFW**__', value: 'Commandes NSFW'},
+        {name: '🔞 __**NSFW**__', value: 'Commandes NSFW'},
         {name: '**>** neko | nekolewd', value: 'Donne des images aléatoire NSFW, 🔞'},
-        {name: '\u200B', value: '\u200B'},*/ //BlankField
+        {name: '\u200B', value: '\u200B'}, //BlankField
         )
     .setTimestamp()
     .setFooter('Page 1/2 | Demandé par ' + membre.username);
