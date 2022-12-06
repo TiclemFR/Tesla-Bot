@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const prefix = 't!';
+const prefix = '/';
 
 module.exports = async(client, message) => {
     if(message.author.bot) return;
