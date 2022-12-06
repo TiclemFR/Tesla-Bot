@@ -5,7 +5,7 @@ const { http } = require('npmlog');
 
 module.exports.run = async(client, message, args) => {
 
-    let url = "https://api.warframestat.us/pc/fissures?language=fr"
+    let url = "https://api.warframestat.us/pc/fissures/?language=fr"
     try {
         https.get(url, (res) => {
             let data = '';

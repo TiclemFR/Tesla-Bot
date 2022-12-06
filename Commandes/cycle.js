@@ -5,9 +5,9 @@ const { http } = require('npmlog');
 
 module.exports.run = async(client, message, args) => {
 
-    let urlCetus = "https://api.warframestat.us/pc/cetusCycle"
-    let urlVallis = "https://api.warframestat.us/pc/vallisCycle"
-    let urlCambion = "https://api.warframestat.us/pc/cambionCycle"
+    let urlCetus = "https://api.warframestat.us/pc/cetusCycle/"
+    let urlVallis = "https://api.warframestat.us/pc/vallisCycle/"
+    let urlCambion = "https://api.warframestat.us/pc/cambionCycle/"
 
     let embedCambion
     let embedCetus

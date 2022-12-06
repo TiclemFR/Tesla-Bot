@@ -5,7 +5,7 @@ const { http } = require('npmlog');
 
 module.exports.run = async (client, message, args) => {
 
-    let url = "https://api.warframestat.us/pc/dailyDeals"
+    let url = "https://api.warframestat.us/pc/dailyDeals/"
     try {
         https.get(url, (res) => {
             let data = '';
